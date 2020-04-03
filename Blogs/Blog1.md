@@ -4,7 +4,9 @@
 **Team members**: Brandon Fok, Nelson Tan, Sam Wheelock
 
 **Project Ideas**
+
 **1. Citizenship (or some other kind) Chat Bot**
+
 **2. Meme Generator**
 Input: Format of a meme
 Output: Meme in given format
