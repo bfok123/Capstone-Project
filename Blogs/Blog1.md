@@ -1,3 +1,5 @@
+### BLOG 1 ###
+
 **Team name**: Natural Little Ponies
 **Team members**: Brandon Fok, Nelson Tan, Sam Wheelock
 
