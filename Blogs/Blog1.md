@@ -2,6 +2,7 @@
 
 **Team name**: Natural Little Ponies  
 **Team members**: Brandon Fok, Nelson Tan, Sam Wheelock
+**GitHub**: [Click Here](https://github.com/bfok123/Capstone-Project)
 
 **Project Ideas**
 
