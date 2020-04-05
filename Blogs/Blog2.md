@@ -4,7 +4,7 @@ In order of excitement
 
 **1. Music Lyric Generation**  
 Pros: Data available, experience with text generation  
-Cons: 
+Cons: Not useful for the world but more useful than memes 
 
 **2. Meme Generator**  
 Pros: Data available, experience with text generation  
