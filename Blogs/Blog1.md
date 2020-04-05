@@ -1,7 +1,7 @@
 ### BLOG 1 ###
 
 **Team name**: Natural Little Ponies  
-**Team members**: Brandon Fok, Nelson Tan, Sam Wheelock
+**Team members**: Brandon Fok, Nelson Tan, Sam Wheelock  
 **GitHub**: [Click Here](https://github.com/bfok123/Capstone-Project)
 
 **Project Ideas**
@@ -18,7 +18,7 @@ Input: Format of a meme
 Output: Meme in given format  
 Technique: Deep learning using meme generator dataset and/or reddit memes dataset  
 Initial Goal: Generate memes given a meme format  
-Stretch Goal: TODO (maybe apply to other things)
+Stretch Goal: Make a functional UI that allows users to choose a meme type to generate for them
 
 **3. Music Lyric Generation**  
 Input: Song structure, topics and/or keywords for each part  
