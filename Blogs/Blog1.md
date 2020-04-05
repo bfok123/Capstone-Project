@@ -5,7 +5,12 @@
 
 **Project Ideas**
 
-**1. Citizenship (or some other kind) Chat Bot**
+**1. Citizenship (or some other kind) Chat Bot**  
+Input: Answer to a citizenship question  
+Output: Pass/Fail  
+Technique: Deep learning using data from crowd sourcing  
+Initial Goal: Classify correct answers with >50% accuracy  
+Stretch Goal: Classify correct answers with >75% accuracy  
 
 **2. Meme Generator**  
 Input: Format of a meme  
