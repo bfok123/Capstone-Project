@@ -1,6 +1,6 @@
 ### BLOG 1 ###
 
-**Team name**: Natural Little Ponies  
+**Team name**: Natural Little Ponies Fok Tan Wheelock (NLP FTW)    
 **Team members**: Brandon Fok, Nelson Tan, Sam Wheelock  
 **GitHub**: [Click Here](https://github.com/bfok123/Capstone-Project)
 
