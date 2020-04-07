@@ -21,6 +21,7 @@ Initial Goal: Generate memes given a meme format
 Stretch Goal: Make a functional UI that allows users to choose a meme type to generate for them, scrape reddit for memes and collect upvotes
 
 **3. Music Lyric Generation**  
+We are leaning towards doing this for our capstone project.
 Input: Song structure, topics and/or keywords for each part  
 Output: Complete song with given structure and topics/keywords  
 Technique: Deep learning using data from RhymeZone (or other rhyme database), MetroLyrics/Genius, etc.  
