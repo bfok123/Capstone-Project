@@ -15,3 +15,5 @@ Pros: Benefits society
 Cons: No data available, no experience with chat bots, other people might be doing it  
 
 We will use Python, Pytorch for recurrent neural networks with attention, AllenNLP for word embeddings.
+
+Lecture topic we would like: RNNs with Attention (specifically GRUs)
