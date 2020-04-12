@@ -1,11 +1,6 @@
-### BLOG 3 ###
+### BLOG 3 ###  
 
-**Due April 14:**  
-
-Project proposal. Include both the minimal viable action plan as well as stretch goals. Clearly state your motivation, related work (literature survey),  
-project objectives, proposed methodologies, available resources, and the evaluation plan.
-
-**Project Proposal: Music Lyric Generation**
+<ins>**Project Proposal, Due April 14: Music Lyric Generation**</ins>  
 
 **Minimal viable action plan with stretch goals:**  
 
@@ -22,6 +17,17 @@ To learn more about rnn's and NLP techniques.  Make rhymes with text generation 
 
 **Related Work:**  
 
-Tutorial for a similar project: [Article](https://towardsdatascience.com/how-to-build-and-deploy-a-lyrics-generation-model-framework-agnostic-589f3026fd53)
+Tutorial for a similar project: [Article](https://towardsdatascience.com/how-to-build-and-deploy-a-lyrics-generation-model-framework-agnostic-589f3026fd53)  
+
+
+**Project Objectives:**  
+
+**Proposed Methodologies:**  
+
+**Available Resources:**  
+
+**Evaluation Plan:**  
+
+This will be our hardest task since "how good" lyrics are is usually a matter of a person's opinion.
 
 
