@@ -48,7 +48,6 @@ First, we will do a quantitative evaluation by calculating the probability of ge
 Second, we will do qualitative evaluation by surveying humans. We will first do a Turing test by inputting actual song names/topics into our model, then asking participants if they can tell the difference between the actual song lyrics vs. our generated lyrics. Then, we will have participants rate the computer generated output on three different dimensions: fluency, coherence, meaning, rhyme.
 
 | Fluency   | Does the song read smoothly and fluently? |
-|-----------|-------------------------------------------|
 | Coherence | Is the song coherent across lines?        |
 | Meaning   | Does the song follow the given topic?     |
 | Rhyme     | Does the song rhyme?                      |
