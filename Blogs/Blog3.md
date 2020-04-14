@@ -5,7 +5,7 @@
 **Minimal viable action plan with stretch goals:**  
 
 <ins>Input:</ins> topics and/or keywords for each part  
-<ins>Output:</ins> Complete song with given structure and topics/keywords  
+<ins>Output:</ins> Rhyming verse that pertains to the given topics or keywords  
 <ins>Technique:</ins> Deep learning using data from a popular song dataset from Kaggle and additional data using a script to scrape lyrics from Genius Lyrics. Scrape rhyming data from RhymeZone or download the CMU Pronunciation Dictionary.    
 <ins>Initial Goal:</ins> Generate a RNN model for generating a rhyming verse of a pop song given a topic  
 <ins>Stretch Goal #1:</ins> Add song structure as an input so users can add a chorus and verses  
