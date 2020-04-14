@@ -14,7 +14,7 @@
 
 **Motivation:**  
 
-To learn more about rnn's and NLP techniques.  Make rhymes with text generation instead of just training a model and running it.  We also have an interest in music and want to provide musicians an easy way to come up with lyrics and inspiration.  
+We have an interest in music and want to provide music producers with an easy way to come up with lyrics and inspiration. Pop songs have a reputation of being formulaic, predictable, and sometimes nonsensical so we should be able to play off of these facts to generate passable lyrics. Despite this, many producers find that the melodic line is easy to come up with while lyrics are a pain point. We will provide the remedy to lyric writer's block.  
 
 **Related Work:**  
 
@@ -29,11 +29,13 @@ Code using the Genius API and using a lyric dataset: [Rap Lyric Sentiment](https
 
 **Project Objectives:**  
 
-We want to first have our project generate one verse of a pop song that rhymes from a user's topic.  
+We want to first have our project generate one verse of a pop song that rhymes from a user's topic. We want the generated text to be creative, something that the user wouldn't have come up with but at the same time something that somebody could come up with. To be creative, it will not necessarily choose the highest probability sequence and we will forbid it from completely copying lines from the training set.   
+
+Because creative text generation isn't novel, our main objective will be the rhyming aspect of lyric generation. At first we will focus on tail rhymes in couplets but we will explore internal rhymes and alliteration which is common in many song lyrics.   
 
 **Proposed Methodologies:**  
 
-We are first going to use a Kaggle dataset to get the names of top songs based on their genres.  From these songs, we will scrape for their lyrics using the Genius API and build our dataset (the song lyrics will be separated by part - verse, chorus, bridge, etc.). We will have a dataset of rhyming words from CMU Pronunciation Dictionary. From these datasets we will create our RNN model, giving rhyming words a higher weight.
+We are first going to use a Kaggle dataset to get the names of top songs based on their genres.  From these songs, we will scrape for their lyrics using the Genius API and build our dataset (the song lyrics will be separated by part - verse, chorus, bridge, etc.). We will have a dataset of rhyming words from CMU Pronunciation Dictionary. From these datasets we will create our RNN model. We will first try to rhyme in couplets so for the last word in every other line we will force a rhyming word with the last word of the previous line.
 
 **Available Resources:**  
 
@@ -43,12 +45,13 @@ Kaggle has a dataset of songs based on genres.  CMU Pronunciation Dictionary has
 
 We will evaluate our model in two ways.
 
-First, we will do a quantitative evaluation by calculating the probability of generated songs. 
+First, we will do a quantitative evaluation by calculating the probability of generated sequences. 
 
 Second, we will do qualitative evaluation by surveying humans. We will first do a Turing test by inputting actual song names/topics into our model, then asking participants if they can tell the difference between the actual song lyrics vs. our generated lyrics. Then, we will have participants rate the computer generated output on three different dimensions: fluency, coherence, meaning, rhyme.
 
-| Fluency   | Does the song read smoothly and fluently? |
+| Criterium | Explanation                               |
 |-----------|-------------------------------------------|
+| Fluency   | Does the song read smoothly and fluently? |
 | Coherence | Is the song coherent across lines?        |
 | Meaning   | Does the song follow the given topic?     |
 | Rhyme     | Does the song rhyme?                      |
