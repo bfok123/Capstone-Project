@@ -8,7 +8,7 @@
 <ins>Output:</ins> Complete song with given structure and topics/keywords  
 <ins>Technique:</ins> Deep learning using data from RhymeZone (or other rhyme database), and also from scraping lyrics using the Genius API  
 <ins>Initial Goal:</ins> Generate a rnn model for generating one verse of a pop song from a topic, with rhymes built in  
-<ins>Stretch Goal #1:</ins> Add song structure as an input so users can add a chorus and verses
+<ins>Stretch Goal #1:</ins> Add song structure as an input so users can add a chorus and verses  
 <ins>Stretch Goal: #2</ins> Generate 6 rnn models for 3 music genres, allowing users to choose a combination of genres for their lyric generation  
 <ins>Strecth Goal #3:</ins> Develop a front end for our application  
 
@@ -18,7 +18,7 @@ We have an interest in music and want to provide music producers with an easy wa
 
 **Related Work:**  
 
-Tutorial for a similar project: [Article](https://towardsdatascience.com/how-to-build-and-deploy-a-lyrics-generation-model-framework-agnostic-589f3026fd53)  
+Tutorial for a similar project: [Article](https://towardsdatascience.com/how-to-build-and-deploy-a-lyrics-generation-model-framework-agnostic-589f3026fd53) This article goes through the high level steps of building a text generation model with suggestions on how to incorporate song lyrics in the model.   
 
 Chinese poetry generation with planning based neural network: [Paper](https://arxiv.org/pdf/1610.09889.pdf)
 
