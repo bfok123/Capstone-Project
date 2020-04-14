@@ -29,7 +29,7 @@ Paper on poem generation where we are getting evaluation techniques: [Paper](htt
 Code using the Genius API and using a lyric dataset: [Rap Lyric Sentiment](https://github.com/Hugo-Nattagh/2017-Hip-Hop)
 
 Generating rhyming rap lyrics: [Generating rhymes with deep learning](https://swarbrickjones.wordpress.com/2016/11/07/deeprhyme-d-prime-generating-dope-rhymes-with-deep-learning/)  
-An example of interesting and creative generated lyrics as well as failures and overly explicit lyrics. The failures in this project can help us decide what features will be too hard to implement and which features we can reach for to improve on existing projects.
+An example of interesting and creative generated lyrics as well as failures. The failures in this project can help us decide what features will be too hard to implement and which features we can reach for to improve on existing projects.
 
 **Project Objectives:**  
 
