@@ -18,20 +18,24 @@ We have an interest in music and want to provide music producers with an easy wa
 
 **Related Work:**  
 
-Tutorial for a similar project: [Article](https://towardsdatascience.com/how-to-build-and-deploy-a-lyrics-generation-model-framework-agnostic-589f3026fd53) This article goes through the high level steps of building a text generation model with suggestions on how to incorporate song lyrics in the model.   
+Tutorial for a similar project: [Article](https://towardsdatascience.com/how-to-build-and-deploy-a-lyrics-generation-model-framework-agnostic-589f3026fd53)  
+This article goes through the high level steps of building a text generation model with suggestions on how to incorporate song lyrics in the model.   
 
-Chinese poetry generation with planning based neural network: [Paper](https://arxiv.org/pdf/1610.09889.pdf)
+Chinese poetry generation with planning based neural network: [Paper](https://arxiv.org/pdf/1610.09889.pdf)  
+For this poem generator, they gave users the ability to choose the poem structure in a planning phase, similar to our stretch goal to allow the user to choose song structure.
 
 Paper on poem generation where we are getting evaluation techniques: [Paper](https://www.aclweb.org/anthology/D14-1074.pdf)
 
 Code using the Genius API and using a lyric dataset: [Rap Lyric Sentiment](https://github.com/Hugo-Nattagh/2017-Hip-Hop)
 
+Generating rhyming rap lyrics: [Generating rhymes with deep learning](https://swarbrickjones.wordpress.com/2016/11/07/deeprhyme-d-prime-generating-dope-rhymes-with-deep-learning/)  
+An example of interesting and creative generated lyrics as well as failures and overly explicit lyrics. The failures in this project can help us decide what features will be too hard to implement and which features we can reach for to improve on existing projects.
 
 **Project Objectives:**  
 
 We want to first have our project generate one verse of a pop song that rhymes from a user's topic. We want the generated text to be creative, something that the user wouldn't have come up with but at the same time something that somebody could come up with. To be creative, it will not necessarily choose the highest probability sequence and we will forbid it from completely copying lines from the training set.   
 
-Because creative text generation isn't novel, our main objective will be the rhyming aspect of lyric generation. At first we will focus on tail rhymes in couplets but we will explore internal rhymes and alliteration which is common in many song lyrics.   
+Because creative text generation isn't novel, our main objective will be the rhyming aspect of lyric generation. At first we will focus on tail rhymes in couplets but we will explore internal rhymes and alliteration which is common in many song lyrics. Another novelty would be choice of genre. In particular, lyric generation based on pop music has not been done yet.  
 
 **Proposed Methodologies:**  
 
