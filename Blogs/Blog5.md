@@ -19,7 +19,7 @@ We saw a few problems with a character-level model. It took almost twice as long
 **Baseline approach #3: Word-level**  
 
 Loss = 3.5405  
-For our word-level model, we found that a temperature below 0.9 did not output anything and a temperature in the range of 0.9 to 1.1 output the best results qualitatively. We didn't figure out how to incorporate rhymes into the model yet, so we generated a very long list of lines and reordered the lines so all the rhyming lines were next to each other. Since all lines were generated on the same call, the lines were fairly coherent.
+For our word-level model, we found that a temperature below 0.9 did not output anything and a temperature in the range of 0.9 to 1.1 output the best results qualitatively. We didn't figure out how to incorporate rhymes into the model yet, so we generated a very long list of lines and reordered the lines so all the rhyming lines were next to each other. Since all lines were generated on the same call to the model, the lines were fairly coherent.
 
 > a plastic smile for my hands of love<br>i be the one to blame, he's the one
 
@@ -27,4 +27,7 @@ For our word-level model, we found that a temperature below 0.9 did not output a
 
 > you find me completely let i know you ma<br>well still here for ya<br>crazy nights (if you don't me) i'm (baby i don't stop)<br>you find me completely let i know you ma<br>well still here for ya<br>but the music's all i gotta do or die i'm not<br>black diamond diamond rings ring the alarm<br>you find me completely let i know you ma<br>well still here for ya
 
-The last set of lyrics makes a pretty good chorus.
+The last set of lyrics makes a pretty good chorus.  
+However, the results are not good enough to use the evaluation survey we made last week. It's pretty clear fluency and coherency did not improve enough to trick a human. We are not able to generate text with a given topic yet. We implemented rhyming with a brute force approach so we won't be happy with that until we can engineer it into a more realistic format. We wrote an evaluator for rhyming that outputs the percentage of rhymes in the generated song so we can check if the engineering is working. For the above examples, the generated song was 75.98% rhymes. 
+
+For next week we will train for more epochs, use higher dimensional word embeddings, allow a larger vocabulary, experiment with dropout, and find a better way to implement rhyming.
