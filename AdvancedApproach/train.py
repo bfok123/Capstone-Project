@@ -21,4 +21,4 @@ bridge_gen = textgenrnn(name="bridge_model")
 bridge_gen.train_on_text(data['Bridge'], new_model=True, word_level=True, num_epochs=50, gen_epochs=10)
 
 outro_gen = textgenrnn(name="outro_model")
-outro_gen.train_on_text(data['Outro'], new_model=True, word_level=True, num_epochs=50, gen_epochs=10)
+outro_gen.train_on_text(data['Outro'], word_level=True, num_epochs=50, gen_epochs=10)
