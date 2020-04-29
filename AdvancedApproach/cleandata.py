@@ -6,7 +6,7 @@ from textgenrnn import textgenrnn
 import pandas
 import numpy as np
 import re
-from langdetect import detect, detect_langs
+from langdetect import detect, detect_langsangs
 
 #%% remove unnecessary columns
 data = pandas.read_csv('C:/Users/Admin/Desktop/Homework/Capstone-Project/Baseline Approach/lyrics.csv')
@@ -27,23 +27,26 @@ for idx, row in data.iterrows():
 data = data.drop(to_remove)
 
 #%% split lyrics into sections
+data = pandas.read_csv('C:/Users/Admin/Desktop/Homework/Capstone-Project/AdvancedApproach/lyrics_english.csv')
 sections = {}
 sections['Chorus'] = []
 sections['Verse'] = []
 sections['Bridge'] = []
 sections['Intro'] = []
 sections['Outro'] = []
+num_songs = 0
 for idx, row in data.iterrows():
     lyrics = row['lyrics']
     curr_sections = re.findall('\[.*?\]', lyrics)
     if len(curr_sections) > 0: # song must be separated into sections
+        num_songs += 1
         for i in range(len(curr_sections) - 1): # separate sections and append to correct key
             match = ''
             for key in sections.keys():
                 if key.lower() in curr_sections[i].lower():
                     match = key
             if match != '': # current section is valid, add to dict
-                start = lyrics.find(curr_sections[i]) + len(curr_sections[i])
+                start = lyrics.find(curr_sections[i]) + len(curr_sections[i]) + 1 # 2 for \n
                 end = lyrics.find(curr_sections[i + 1])
                 sections[match].append(re.sub(r'[^\x00-\x7f]',r'', lyrics[start:end]))
                 lyrics = lyrics[end:-1]
@@ -60,6 +63,10 @@ for idx, row in data.iterrows():
             start = lyrics.find(curr_sections[-1]) + len(curr_sections[-1])
             end = -1
             sections[match].append(re.sub(r'[^\x00-\x7f]',r'', lyrics[start:end]))
+            
+#%%
+for section in sections.keys():
+    print(section, len(sections[section]))
 
             
 #%% write to json
