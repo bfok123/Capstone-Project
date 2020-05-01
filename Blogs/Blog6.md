@@ -18,9 +18,9 @@ Like the previous week, we generated sequences with beam search and with tempera
 We mostly left temperature alone this week because we were focusing on getting good rhyming engineering.
 
 ## Rhyming Engineering ##
-We approached rhyming a few different ways. We would first generate a long list of lyrics, about 100 lines, then group them into lines that all rhymed with each other. This was important to take advantage of attention, longer memory of previous generated words, to achieve coherency between lines. We would then use user input to order the rhymes. 
+We approached rhyming a few different ways. We would first generate a long list of lyrics, about 100 lines, then group them into lines that all rhymed with each other. This was important to take advantage of attention in RNNs (longer memory of previous generated words) to achieve coherency between lines. We would then use user input to order the rhymes. 
 
-For example, user input: "AABB" would choose two couplets to output. From here, there were a few choices to supply those rhyming lines. Frequency, minimum distance between lines, average distance between lines, and choosing at random, all had merit when choosing pairs of rhyming lines. 
+For example, user input: "AABB" would choose two couplets to output. From here, there were a few choices to supply those rhyming lines. Frequency, minimum distance between lines, average distance between lines, and choosing at random, all had merit when choosing pairs of rhyming lines. For the following examples, we used frequency of the rhyme showing up in the generationa nd we will experiment with other techinques in the following week. 
 
 ## Examples ##
 
@@ -32,7 +32,7 @@ on
 for on
 gotta do
 
-\[Verse\]
+\[Verse\]  
 got done you for time you love for
 go feeling s playing want fine stupid my i heart heart my playing you funny s my heart out you written lost a gets another on if on tell you can around on nobody t t t work me can can can knew can can, s on life me for
 i i again care give swear i is, store cause pain be pain
@@ -48,10 +48,13 @@ from a left of dreams
 even though it seems  
 there s nothing left to me  
 
-\[Bridge\]
+\[Bridge\]  
 they t i boy that got know about
 bout
 baby out
 better your love and so love your t called mind request the the be but the song the
 i ya be dj beat the m joy man to
 been way t always was you
+
+## Evaluation ##
+Chorus was the only section that had good results. The lines were surprisingly coherent. We didn't expect it to follow the repetitive format of pop choruses (1st and 2nd lines are the same as 4th and 5th lines). The rhyming matched the user input perfectly. At first glance, this chorus might even sound fluent. We rate this chorus Fluency: 3/5, Coherency: 4/5, Rhyming: 5/5, Topic: N/A.
