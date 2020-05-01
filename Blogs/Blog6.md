@@ -20,7 +20,7 @@ We mostly left temperature alone this week because we were focusing on getting g
 ## Rhyming Engineering ##
 We approached rhyming a few different ways. We would first generate a long list of lyrics, about 100 lines, then group them into lines that all rhymed with each other. This was important to take advantage of attention in RNNs (longer memory of previous generated words) to achieve coherency between lines. We would then use user input to order the rhymes. 
 
-For example, user input: "AABB" would choose two couplets to output. From here, there were a few choices to supply those rhyming lines. Frequency, minimum distance between lines, average distance between lines, and choosing at random, all had merit when choosing pairs of rhyming lines. For the following examples, we used frequency of the rhyme showing up in the generationa nd we will experiment with other techinques in the following week. 
+For example, user input: "AABB" would choose two couplets to output. From here, there were a few choices to supply those rhyming lines. Frequency, minimum distance between lines, average distance between lines, and choosing at random, all had merit when choosing pairs of rhyming lines. For the following examples, we used frequency of the rhyme showing up in the generation and we will experiment with other techinques in the following week. 
 
 ## Examples ##
 
@@ -60,9 +60,11 @@ been way t always was you
 
 Chorus was the only section that had good results. The lines were surprisingly coherent. We didn't expect it to follow the repetitive format of pop choruses so well (1st and 2nd lines are the same as 4th and 5th lines) and were pleasantly surprised by this result. The rhyming matched the user input perfectly. At first glance, this chorus might even sound fluent. We rate this chorus Fluency: 3/5, Coherency: 4/5, Rhyming: 5/5, Topic: N/A.
 
-The intro, verses, and bridge all had many repeating words as well as grammatical and spelling errors. We personally evaluated each of our models using our evaluation domains of fluency, coherency, meaning, and rhyme, and these three models were consistently low-scoring over several generations. 
+The intro, verses, and bridge all had many repeating words as well as grammatical and spelling errors. Collectively, these scored Fluency: 0/5, Coherency 0/5, Rhyming: 5/5, Topic: N/A. The low scoring models for intro, verse, and bridge were mostly due to the fact that we had a lot less data to train those models compared to our chorus model. Plans to remedy this issue are outlined in the next section. 
+
+Despite the poor quality of the sections besides chorus, we have a good framework to generate whole songs and we are confident that the other sections will catch up to the quality of the chorus. While our evaluation is biased since it is based off the opinions of three people working on this project, all of these generated lyrics have only reached a baseline of minimum fluency and coherency. When the quality improves, we can survey more people and gain direction towards tuning hyperparameters.
 
 ## Planned Improvements ##
 
-The low scoring models for intro, verse, and bridge were mostly due to the fact that we had a lot less data to train those models compared to our chorus model. To improve this, we plan on increasing the size of our datasets as well as tuning different hyperparameters to see which give us the best results. To increase the size of our datasets, one plan we have for this is to duplicate our current datasets to the end of themselves and shuffle. Some of the hyperparameters we plan on iterating over are temperature (ie: "creativity" of the generations), 
+To improve the quality of intro, verse, and bridge models, we plan on increasing the size of our datasets by downloading more song lyrics and augmenting the original dataset by pasting several copies and shuffling the lyrics as well as tuning different hyperparameters to see which give us the best results. To increase the size of our datasets, one plan we have for this is to duplicate our current datasets to the end of themselves and shuffle. Some of the hyperparameters we plan on iterating over are temperature (ie: "creativity" of the generations), 
 
