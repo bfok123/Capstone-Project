@@ -55,3 +55,11 @@ baby out
 better your love and so love your t called mind request the the be but the song the
 i ya be dj beat the m joy man to
 been way t always was you
+
+## Evaluation ##
+
+The intro, verses, and bridge all had many repeating words as well as grammatical and spelling errors. We personally evaluated each of our models using our evaluation domains of fluency, coherency, meaning, and rhyme, and these three models were consistently low-scoring over several generations. 
+
+## Planned Improvements ##
+
+The low scoring models for intro, verse, and bridge were mostly due to the fact that we had a lot less data to train those models compared to our chorus model. To improve this, we plan on increasing the size of our datasets as well as tuning different hyperparameters to see which give us the best results. To increase the size of our datasets, one plan we have for this is to duplicate our current datasets to the end of themselves and shuffle. Some of the hyperparameters we plan on iterating over are temperature (ie: "creativity" of the generations), 
