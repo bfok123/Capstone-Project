@@ -24,6 +24,21 @@ For example, user input: "AABB" would choose two couplets to output. From here, 
 
 ## Examples ##
 
+\[Intro\]
+on
+dig on well we the on
+i know about you
+on
+for on
+gotta do
+
+\[Verse\]
+got done you for time you love for
+go feeling s playing want fine stupid my i heart heart my playing you funny s my heart out you written lost a gets another on if on tell you can around on nobody t t t work me can can can knew can can, s on life me for
+i i again care give swear i is, store cause pain be pain
+ring had what my had your you you price style pay pay for for
+i says to says an must im what good the before
+, but same
 
 \[Chorus\]  
 from a left of dreams  
@@ -32,3 +47,11 @@ to pretend as crazy i can see
 from a left of dreams  
 even though it seems  
 there s nothing left to me  
+
+\[Bridge\]
+they t i boy that got know about
+bout
+baby out
+better your love and so love your t called mind request the the be but the song the
+i ya be dj beat the m joy man to
+been way t always was you
