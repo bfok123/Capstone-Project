@@ -64,5 +64,5 @@ The intro, verses, and bridge all had many repeating words as well as grammatica
 
 ## Planned Improvements ##
 
-The low scoring models for intro, verse, and bridge were mostly due to the fact that we had a lot less data to train those models compared to our chorus model. To improve this, we plan on increasing the size of our datasets as well as tuning different hyperparameters to see which give us the best results. To increase the size of our datasets, one plan we have for this is to duplicate our current datasets to the end of themselves and shuffle. Some of the hyperparameters we plan on iterating over are temperature (ie: "creativity" of the generations), 
+The low scoring models for intro, verse, and bridge were mostly due to the fact that we had a lot less data to train those models compared to our chorus model. To improve this, we plan on increasing the size of our datasets as well as tuning different parameters to see which give us the best results. To increase the size of our datasets, one plan we have for this is to duplicate our current datasets to the end of themselves and shuffle. Some of the parameters we plan on iterating over are temperature (ie: "creativity" of the generations), epochs, 
 
