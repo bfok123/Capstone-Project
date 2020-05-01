@@ -7,7 +7,7 @@ First advanced solution attempt. What did you try? Are there any exciting result
 For this week we devoted a lot of time to engineering rhyming post-generation. We also wanted to see how a smaller, more focused dataset affected the quality of lyrics. 
 
 ## New Dataset ##
-Last week we saw that there were sections of our generation that looked a lot like choruses when we rearranged the lines to put rhymes closer together. We wanted to test if this could happen naturally so we trained a 2-layer, 128-cell LSTM for each section of each song. The sections were labeled in some of the songs and we got a total of  
+Last week we saw that there were sections of our generation that looked a lot like choruses when we rearranged the lines to put rhymes closer together. We wanted to test if this could happen naturally so we trained a 2-layer, 128-cell LSTM for each section of each song, meaning we made 5 different models. The sections were labeled in some of the songs and we got a total of  
 
 Chorus (7893), Verse (1270), Bridge (618), Intro (136), Outro (118) on 4,132 songs.  
 
@@ -18,9 +18,9 @@ Like the previous week, we generated sequences with beam search and with tempera
 We mostly left temperature alone this week because we were focusing on getting good rhyming engineering.
 
 ## Rhyming Engineering ##
-We approached rhyming a few different ways. We would first generate a long list of lyrics, about 100 lines, then group them into lines that all rhymed with each other. This was important to take advantage of attention in RNNs (longer memory of previous generated words) to achieve coherency between lines. We would then use user input to order the rhymes. 
+We approached rhyming a few different ways. We would first generate a long list of lyrics, about 100 lines, then group them into lines that all rhymed with each other (using a python rhyming api and a python dictionary). This was important to take advantage of attention, longer memory of previous generated words, to achieve coherency between lines. We would then use user input to order the rhymes.
 
-For example, user input: "AABB" would choose two couplets to output. From here, there were a few choices to supply those rhyming lines. Frequency, minimum distance between lines, average distance between lines, and choosing at random, all had merit when choosing pairs of rhyming lines. For the following examples, we used frequency of the rhyme showing up in the generation and we will experiment with other techinques in the following week. 
+For example, user input: "AABB" would print 4 lines (one for each letter) where lines labelled with the same uppercase character would rhyme with each other. Using this input along with our list of rhyming lines, our last step was to pick which rhyming lines to use for the final lyrics. As of right now, we are randomly picking lines that fit the users format.  However in the future we will experiment by choosing rhymes based on their frequency, minimum distance between lines, and the average distance between lines.  We want to try choosing based off of the minimum distance between the rhyming lines because the model generates based of the context, so theoretically lines that are generated closer together should be more coherent.
 
 ## Examples ##
 
