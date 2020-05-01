@@ -57,4 +57,4 @@ i ya be dj beat the m joy man to
 been way t always was you
 
 ## Evaluation ##
-Chorus was the only section that had good results. The lines were surprisingly coherent. We didn't expect it to follow the repetitive format of pop choruses (1st and 2nd lines are the same as 4th and 5th lines) and were pleasantly surprised by this result. The rhyming matched the user input perfectly. At first glance, this chorus might even sound fluent. We rate this chorus Fluency: 3/5, Coherency: 4/5, Rhyming: 5/5, Topic: N/A.
+Chorus was the only section that had good results. The lines were surprisingly coherent. We didn't expect it to follow the repetitive format of pop choruses so well (1st and 2nd lines are the same as 4th and 5th lines) and were pleasantly surprised by this result. The rhyming matched the user input perfectly. At first glance, this chorus might even sound fluent. We rate this chorus Fluency: 3/5, Coherency: 4/5, Rhyming: 5/5, Topic: N/A.
