@@ -21,3 +21,14 @@ We mostly left temperature alone this week because we were focusing on getting g
 We approached rhyming a few different ways. We would first generate a long list of lyrics, about 100 lines, then group them into lines that all rhymed with each other. This was important to take advantage of attention, longer memory of previous generated words, to achieve coherency between lines. We would then use user input to order the rhymes. 
 
 For example, user input: "AABB" would choose two couplets to output. From here, there were a few choices to supply those rhyming lines. Frequency, minimum distance between lines, average distance between lines, and choosing at random, all had merit when choosing pairs of rhyming lines. 
+
+## Examples ##
+
+
+\[Chorus\]  
+from a left of dreams  
+even though it seems  
+to pretend as crazy i can see  
+from a left of dreams  
+even though it seems  
+there s nothing left to me  
