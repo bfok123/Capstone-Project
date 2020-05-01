@@ -25,12 +25,12 @@ For example, user input: "AABB" would print 4 lines (one for each letter) where 
 ## Examples ##
 
 \[Intro\]
-on
-dig on well we the on
-i know about you
-on
-for on
-gotta do
+on  
+dig on well we the on  
+i know about you  
+on  
+for on  
+gotta do  
 
 \[Verse\]  
 got done you for time you love for
