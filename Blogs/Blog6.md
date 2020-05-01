@@ -24,7 +24,7 @@ For example, user input: "AABB" would print 4 lines (one for each letter) where 
 
 ## Examples ##
 
-\[Intro\]
+\[Intro\]  
 on  
 dig on well we the on  
 i know about you  
