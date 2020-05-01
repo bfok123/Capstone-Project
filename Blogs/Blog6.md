@@ -18,7 +18,7 @@ Like the previous week, we generated sequences with beam search and with tempera
 We mostly left temperature alone this week because we were focusing on getting good rhyming engineering.
 
 ## Rhyming Engineering ##
-We approached rhyming a few different ways. We would first generate a long list of lyrics, about 100 lines, then group them into lines that all rhymed with each other (using a python rhyming api and a python dictionary). This was important to take advantage of attention, longer memory of previous generated words, to achieve coherency between lines. We would then use user input to order the rhymes.
+We approached rhyming a few different ways. We would first generate a long list of lyrics, about 100 lines, then group them into lines that all rhymed with each other (using a python rhyming api and a python dictionary). This was important to take advantage of attention (longer memory of previous generated words) to achieve coherency between lines. We would then use user input to order the rhymes.
 
 For example, user input: "AABB" would print 4 lines (one for each letter) where lines labelled with the same uppercase character would rhyme with each other. Using this input along with our list of rhyming lines, our last step was to pick which rhyming lines to use for the final lyrics. As of right now, we are randomly picking lines that fit the users format.  However in the future we will experiment by choosing rhymes based on their frequency, minimum distance between lines, and the average distance between lines.  We want to try choosing based off of the minimum distance between the rhyming lines because the model generates based of the context, so theoretically lines that are generated closer together should be more coherent.
 
