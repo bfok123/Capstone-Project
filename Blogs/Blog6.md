@@ -66,5 +66,5 @@ Despite the poor quality of the sections besides chorus, we have a good framewor
 
 ## Planned Improvements ##
 
-To improve the quality of intro, verse, and bridge models, we plan on increasing the size of our datasets by downloading more song lyrics. We also plan on augmenting our datasets by  duplicating our current datasets to the end of themselves and shuffling. Some of the parameters we plan on iterating over our temperature (ie: "creativity" of the generations) such as different temperatures for individual words in the sequence and different word embedding dimensions for each model to make up for differently sized datasets. 
+To improve the quality of intro, verse, and bridge models, we plan on increasing the size of our datasets by downloading more song lyrics. We also plan on augmenting our datasets by  duplicating our current datasets to the end of themselves and shuffling. Some of the parameters we plan on iterating over are temperature (ie: "creativity" of the generations) such as different temperatures for individual words in the sequence and different word embedding dimensions for each model to make up for differently sized datasets. 
 
