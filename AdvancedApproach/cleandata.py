@@ -7,6 +7,8 @@ import pandas
 import numpy as np
 import re
 from langdetect import detect
+import json
+import os
 
 #%% remove unnecessary columns
 data = pandas.read_csv('C:/Users/Admin/Desktop/Homework/Capstone-Project/Baseline Approach/lyrics.csv')
@@ -63,16 +65,9 @@ for idx, row in data.iterrows():
             start = lyrics.find(curr_sections[-1]) + len(curr_sections[-1])
             end = -1
             sections[match].append(re.sub(r'[^\x00-\x7f]',r'', lyrics[start:end]))
-            
-#%%
-for section in sections.keys():
-    print(section, len(sections[section]))
 
             
 #%% write to json
-import json
-import os
-
 absolute_path = os.path.dirname(os.path.abspath(__file__))
 path = absolute_path + "\\sections.json"
 
@@ -80,6 +75,3 @@ json = json.dumps(sections)
 f = open(path,"w")
 f.write(json)
 f.close()
-
-#%%
-data.to_csv('C:/Users/Admin/Desktop/Homework/Capstone-Project/AdvancedApproach/lyrics_clean.csv')
