@@ -52,6 +52,7 @@ me all the that we feel print,
 ## Evaluation ##
 Using our evaluation survey, we pitted last week's generated chorus with P!NK's chorus in "Slut Like You". Our chorus scored lower in fluency and coherency and was able to trick 4/15 (26.7%) people into thinking our generated lyrics were real and P!NK's were fake.
 
+\[Generated Lyrics\]  
 From a left of dreams  
 Even though it seems  
 To pretend as crazy i can see  
@@ -64,6 +65,7 @@ There’s nothing left to me
 N/A - Topic  
 4.27 - Does it rhyme?  
 
+\[Chorus from Slut Like You\]  
 I got a little piece of you-hoo  
 And it's just like woohoo  
 Wham, bam, thank you, ma'am!  
