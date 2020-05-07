@@ -5,8 +5,8 @@ f = open('sections.json')
 data = json.load(f)
 batchsize = 8192
 rnn_size = 128
-dim_embeddings = 400
-max_words = 40000
+dim_embeddings = 100
+max_words = 10000
 #%%
 #print ('Training intro model')
 #intro_gen = textgenrnn(name="intro_model")
@@ -32,29 +32,29 @@ max_words = 40000
 #                          max_words=max_words,
 #                          batch_size=batchsize)
 
-print ('Training verse model')
-verse_gen = textgenrnn(name="verse_model")
-verse_gen.train_on_texts(data['Verse'],
-                         new_model=True,
-                         word_level=True,
-                         num_epochs=50,
-                         gen_epochs=10,
-                         rnn_size=rnn_size,
-                         dim_embeddings=dim_embeddings,
-                         max_words=max_words,
-                         batch_size=batchsize)
+#print ('Training verse model')
+#verse_gen = textgenrnn(name="verse_model")
+#verse_gen.train_on_texts(data['Verse'],
+#                         new_model=True,
+#                         word_level=True,
+#                         num_epochs=50,
+#                         gen_epochs=10,
+#                         rnn_size=rnn_size,
+#                         dim_embeddings=dim_embeddings,
+#                         max_words=max_words,
+#                         batch_size=batchsize)
 
-print ('Training bridge model')
-bridge_gen = textgenrnn(name="bridge_model")
-bridge_gen.train_on_texts(data['Bridge'],
-                          new_model=True,
-                          word_level=True,
-                          num_epochs=50,
-                          gen_epochs=10,
-                          rnn_size=rnn_size,
-                          dim_embeddings=dim_embeddings,
-                          max_words=max_words,
-                          batch_size=batchsize)
+#print ('Training bridge model')
+#bridge_gen = textgenrnn(name="bridge_model")
+#bridge_gen.train_on_texts(data['Bridge'],
+#                          new_model=True,
+#                          word_level=True,
+ #                         num_epochs=50,
+  #                        gen_epochs=10,
+   #                       rnn_size=rnn_size,
+    #                      dim_embeddings=dim_embeddings,
+     #                     max_words=max_words,
+      #                    batch_size=batchsize)
 
 print ('Training outro model')
 outro_gen = textgenrnn(name="outro_model")
