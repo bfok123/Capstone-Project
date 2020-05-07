@@ -10,6 +10,7 @@ Summary
 
 ## New Dataset ##
 Last week we split our original dataset into sections which reduced our datasets too much. The results from the new models were very bad besides the chorus model. This week we scraped ~1,600 additional songs off of Genius Lyrics from the top 40 pop artists of 2019 [Ranking](https://www.ranker.com/list/best-pop-artists-2019/ranker-music). This increased the sizes of our datasets by 7-75x.
+
 1,668 Intros  
 58,457 Choruses  
 28,069 Verses  
@@ -64,6 +65,8 @@ my up all to safe, up fall
 How did I No longer?
 
 ## Evaluation ##
+Overall, the quality of generated lyrics for each section except for chorus was better. Our chorus model kept plagiarizing actual choruses and the ones that were not plagiarized did not sound as good as last week. This might be because the chorus data has many duplicates and isn't shuffled so certain words trigger plagiarization of several lines.
+
 Using our evaluation survey, we pitted last week's generated chorus with P!NK's chorus in "Slut Like You". Our chorus scored lower in fluency and coherency and was able to trick 4/15 (26.7%) people into thinking our generated lyrics were real and P!NK's were fake.
 
 \[Generated Lyrics\]  
@@ -98,3 +101,5 @@ N/A - Topic
 Although our new rhyming technique slightly improved our output, there is still a lack of coherency between lines. Our next idea to combat this is to be more strict in our post-processing. Specifically, we plan on forcing rhyming lines to be directly next to each other in order to be considered for output. This means that we probably have to generate more lines in order to find rhyming lines directly next to each other (so getting output would take longer), but the quality of the output should improve.
 
 Another problem with our current model is that we often have output that doesn't make any sense (either grammatically or because of gibberish). To combat this, we plan on removing data from our original dataset, and only using the Genius API for lyrics. Our original dataset had a lot of bad data that we could not completely remove through automation, but we know that Genius API lyrics (especially for well-known Pop artists) will be very clean and already sectioned by Chorus, Verse, Bridge, Intro, Outro.
+
+The last improvement we have planned is to our survey. Currently, our survey has 3 parts. First, it asks the user to rate the generated lyrics (without telling participants its generated) on a 1-5 scale on Fluency, Coherency, Topic, and Rhyming. Next, the survey asks the user to do the same ratings for real lyrics. Lastly, the survey puts both lyrics side-by-side and asks the user to determine which was real and which was generated. Based on feedback we received in our class presentation, we are going to randomize the order of the lyrics (generated then real or real then generated) for each survey we give out. This is because people sometimes have bias towards choosing left or right, first or second, etc. so this should combat that bias.
