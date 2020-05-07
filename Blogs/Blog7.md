@@ -26,6 +26,12 @@ The problem with this approach was that context was not preserved, because rhymi
 ## Examples ##
 
 \[Intro\]  
+gente de de de de lo mejor de
+me
+let s have some is sick your a the your i on disco s let a
+lights stop the guess the and young see
+and try i see
+the rip it might another out the
 
 \[Verse\]  
 
@@ -44,7 +50,11 @@ stay every night that you fake you miss
 me all the that we feel print,  
 
 \[Bridge\]  
-
+just, you me t your a give and thing
+same we thing
+me door
+it else your
+my up all to safe, up fall
 
 \[Outro\]  
 
@@ -81,5 +91,6 @@ N/A - Topic
 
 ## Planned Improvements ##
 
-To improve the quality of intro, verse, and bridge models, we plan on increasing the size of our datasets by downloading more song lyrics. We also plan on augmenting our datasets by  duplicating our current datasets to the end of themselves and shuffling. Some of the parameters we plan on iterating over are temperature (ie: "creativity" of the generations) such as different temperatures for individual words in the sequence and different word embedding dimensions for each model to make up for differently sized datasets. 
+Although our new rhyming technique slightly improved our output, there is still a lack of coherency between lines. Our next idea to combat this is to be more strict in our post-processing. Specifically, we plan on forcing rhyming lines to be directly next to each other in order to be considered for output. This means that we probably have to generate more lines in order to find rhyming lines directly next to each other (so getting output would take longer), but the quality of the output should improve.
 
+Another problem with our current model is that we often have output that doesn't make any sense (either grammatically or because of gibberish). To combat this, we plan on removing data from our original dataset, and only using the Genius API for lyrics. Our original dataset had a lot of bad data that we could not completely remove through automation, but we know that Genius API lyrics (especially for well-known Pop artists) will be very clean and already sectioned by Chorus, Verse, Bridge, Intro, Outro.
