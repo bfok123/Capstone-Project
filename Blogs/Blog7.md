@@ -9,7 +9,7 @@ Continue advanced solution attempt #1, run more experiments, do more error analy
 Summary
 
 ## New Dataset ##
-Last week we split our original dataset into sections which reduced our datasets too much. The results from the new models were very bad besides the chorus model. This week we scraped ~1,600 additional songs off of Genius Lyrics from the top 40 pop artists of 2019 (https://www.ranker.com/list/best-pop-artists-2019/ranker-music)[ranking]. This increased the sizes of our datasets by 7-75x.
+Last week we split our original dataset into sections which reduced our datasets too much. The results from the new models were very bad besides the chorus model. This week we scraped ~1,600 additional songs off of Genius Lyrics from the top 40 pop artists of 2019 [https://www.ranker.com/list/best-pop-artists-2019/ranker-music]link. This increased the sizes of our datasets by 7-75x.
 1,668 Intros  
 58,457 Choruses  
 28,069 Verses  
