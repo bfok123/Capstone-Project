@@ -59,10 +59,10 @@ From a left of dreams
 Even though it seems  
 There’s nothing left to me  
 
-2.8 - Fluency
-2.67 - Coherency
-N/A - Topic
-4.27 - Does it rhyme?
+2.8 - Fluency  
+2.67 - Coherency  
+N/A - Topic  
+4.27 - Does it rhyme?  
 
 I got a little piece of you-hoo  
 And it's just like woohoo  
