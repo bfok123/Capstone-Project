@@ -33,8 +33,6 @@ lights stop the guess the and young see
 and try i see
 the rip it might another out the
 
-\[Verse\]  
-
 \[Rhyming Verse\]  
 just give me to see it and nobody’s do  
 if you scared, i know it’s what you  
@@ -42,6 +40,12 @@ look, we gon do what it have to tell who? do you know
 we livin like i’m livin’ without you  
 
 \[Chorus\]  
+got that song is look up back
+look up praise that
+naw a heart and lay
+(got that
+look that i turn up chorus get to fad
+all the stupid day,
 
 \[Non-Rhyming Verse\]  
 boy, would you get up to know you i know  
@@ -57,7 +61,7 @@ it else your
 my up all to safe, up fall
 
 \[Outro\]  
-
+How did I No longer?
 
 ## Evaluation ##
 Using our evaluation survey, we pitted last week's generated chorus with P!NK's chorus in "Slut Like You". Our chorus scored lower in fluency and coherency and was able to trick 4/15 (26.7%) people into thinking our generated lyrics were real and P!NK's were fake.
