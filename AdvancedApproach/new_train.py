@@ -59,6 +59,7 @@ max_words = 10000
 print ('Training outro model')
 outro_gen = textgenrnn(name="outro_model")
 outro_gen.train_on_texts(data['Outro'],
+                         new_model=True,
                          word_level=True,
                          num_epochs=50,
                          gen_epochs=10,
