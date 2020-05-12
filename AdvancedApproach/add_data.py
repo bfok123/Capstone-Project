@@ -13,7 +13,7 @@ with open(os.path.join(current_dir, 'sections_week8.json')) as sections_file:
     sections = json.load(sections_file)
     
 #%% append new data to json
-with open(os.path.join(current_dir, 'genius_songs.txt')) as genius_songs:
+with open(os.path.join(current_dir, 'genius_songs2.txt')) as genius_songs:
     songs = genius_songs.readlines()
     
 for i in range(len(songs)):
