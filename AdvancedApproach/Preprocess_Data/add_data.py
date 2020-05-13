@@ -9,11 +9,11 @@ import json
 
 #%% load old json
 current_dir = os.path.dirname(__file__)
-with open(os.path.join(current_dir, 'sections_week8.json')) as sections_file:
+with open(os.path.join(current_dir, 'sections_week9.json')) as sections_file:
     sections = json.load(sections_file)
     
 #%% append new data to json
-with open(os.path.join(current_dir, 'genius_songs2.txt')) as genius_songs:
+with open(os.path.join(current_dir, 'genius_songs4.txt')) as genius_songs:
     songs = genius_songs.readlines()
     
 for i in range(len(songs)):
@@ -30,5 +30,9 @@ for i in range(len(songs)):
         
 
 #%% write new data to json
-with open(os.path.join(current_dir, 'sections_week8.json'), 'w') as f:
+with open(os.path.join(current_dir, 'sections_week9.json'), 'w') as f:
     json.dump(sections, f)
+    
+#%% check new json
+with open(os.path.join(current_dir, 'sections_week9.json')) as sections_file:
+    checkjson = json.load(sections_file)
