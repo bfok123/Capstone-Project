@@ -1,14 +1,14 @@
 import json 
 from textgenrnn import textgenrnn
 
-f = open('sections.json')
+f = open('sections_week8.json')
 data = json.load(f)
 batchsize = 8192
 rnn_size = 128
 dim_embeddings = 100
 max_words = 40000
 gen_epochs = 25
-#%%
+
 print ('Training intro model')
 intro_gen = textgenrnn(name="intro_model")
 intro_gen.train_on_texts(data['Intro'],
@@ -32,7 +32,7 @@ chorus_gen.train_on_texts(data['Chorus'],
                           dim_embeddings=dim_embeddings,
                           max_words=max_words,
                           batch_size=batchsize)
-
+"""
 print ('Training verse model')
 verse_gen = textgenrnn(name="verse_model")
 verse_gen.train_on_texts(data['Verse'],
@@ -44,6 +44,7 @@ verse_gen.train_on_texts(data['Verse'],
                         dim_embeddings=dim_embeddings,
                         max_words=max_words,
                         batch_size=batchsize)
+>>>>>>> 6e03ef263f94e59e179a00d208619b78b71c25c7
 
 print ('Training bridge model')
 bridge_gen = textgenrnn(name="bridge_model")
