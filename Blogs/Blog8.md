@@ -35,40 +35,40 @@ From these results, we will be using ... from now on.
 
 \[Intro\]
 
-hooked i on you you
-fucked i went tired the understand tell do
-ever people some i spreading to i
-ladies i it my see my
+hooked i on you you  
+fucked i went tired the understand tell do  
+ever people some i spreading to i  
+ladies i it my see my  
 
 \[Strict Rhyming Chorus\] 
 
-oh know
-cause i playing these games to stay
-the one who s got time (oh
-sunsets don t try to run away
+oh know  
+cause i playing these games to stay  
+the one who s got time (oh  
+sunsets don t try to run away  
 
 \[Chorus\]
 
-today back, no name
-i just throw it stain to the heart that is heart is use to heal the pain
-don t wanna wait on front, i won t lie
-sudden half you, don t buy
+today back, no name  
+i just throw it stain to the heart that is heart is use to heal the pain  
+don t wanna wait on front, i won t lie  
+sudden half you, don t buy  
 
 \[Verse\]
 
-sink till baby you were high the dawn
-don't a guy guy needs a song
-and some money some nights of the tube and over and waiting too real show up
-heads i m am but
+sink till baby you were high the dawn  
+don't a guy guy needs a song  
+and some money some nights of the tube and over and waiting too real show up  
+heads i m am but  
 
 \[Bridge\]
 
 \[Outro\]
 
-worse can
-and you
-i until problem my in with goddamn
-you you you
+worse can   
+and you  
+i until problem my in with goddamn  
+you you you  
 
 ## Evaluation ##
 
