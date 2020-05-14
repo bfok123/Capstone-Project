@@ -11,11 +11,11 @@ We decided to switch our dataset to consist of songs retrieved from the Genius A
 
 [Ranking](https://www.ranker.com/list/best-pop-artists-2019/ranker-music).
 
-XXX Intros  
-XXX Choruses  
-XXX Verses  
-XXX Bridge  
-XXX Outros  
+83928 Intros  
+54373 Choruses  
+3191 Verses  
+15878 Bridge  
+11684 Outros  
 
 ...
 
