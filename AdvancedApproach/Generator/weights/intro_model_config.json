@@ -1,1 +1,1 @@
-{"rnn_layers": 2, "rnn_size": 256, "rnn_bidirectional": false, "max_length": 40, "max_words": 40000, "dim_embeddings": 400, "word_level": true, "single_text": false, "name": "intro_model"}
+{"rnn_layers": 2, "rnn_size": 128, "rnn_bidirectional": false, "max_length": 40, "max_words": 40000, "dim_embeddings": 100, "word_level": true, "single_text": false, "name": "intro_model"}
