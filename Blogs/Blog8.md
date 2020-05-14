@@ -7,7 +7,7 @@ Second advanced solution attempt. What did you try? Are there any exciting resul
 Summary
 
 ## New Dataset ##
-We decided to switch our dataset to consist of songs retrieved from the Genius API.  We added XXX more pop artists to our list and acquired a total of XXX songs (We removed all of the songs from the previous dataset that we got from Kaggle.
+We decided to switch our dataset to consist of songs retrieved from the Genius API.  We added 33 more pop artists to our list and acquired a total of 3120 songs (We removed all of the songs from the previous dataset that we got from Kaggle.
 
 [Ranking](https://www.ranker.com/list/best-pop-artists-2019/ranker-music).
 
