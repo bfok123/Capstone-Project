@@ -108,10 +108,10 @@ After surveying 32 people, here are the averages we got:
 
 |               | Fluency       | Coherency  | Does it Rhyme? | % that thought they were real |
 | ------------- |---------------| -----------| ---------------| ------------------------------|
-| ** Original Rhyming Algorithm ** |2.25|2.25|3.844|28.125%|
-| ** Strict Rhyming Algorithm **   |2.938|2.844|4.063|50%|
-| ** No Rhyming Algorithm **       |2.531|2.625|1.594|21.875%|
-| ** Real Chorus **                |3.875|4.094|2.469|90.625%|
+| **Original Rhyming Algorithm** |2.25|2.25|3.844|28.125%|
+| **Strict Rhyming Algorithm**   |2.938|2.844|4.063|50%|
+| **No Rhyming Algorithm**       |2.531|2.625|1.594|21.875%|
+| **Real Chorus**                |3.875|4.094|2.469|90.625%|
 
 ## Planned Improvements ##
 As we initially planned with this project, we plan on making a frontend UI for our model. It will allow the user to select a genre, input a topic, input rhymings schemes, and receive a complete song with the given options.
