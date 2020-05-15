@@ -100,9 +100,9 @@ paint face and and and and and and and and and and and and and and and paint and
 
 ## Evaluation ##
 
-By just looking at the lines being produced, we can see that there are still some lines that make no sense, have bad puncuation, and repeat words way too often.  We have will address this problem next week. Another problem with our model is that it is hard to evaluate the consistency of each model (how often they generate good results).  This is an important part that we have not been addressing as we are not sure how to evaluate it. 
+By just looking at the lines being produced, we can see that there are still some lines that make no sense, have bad punctuation, and repeat words way too often.  We will have to address this problem next week. Another problem with our model is that it is hard to evaluate the consistency of each model (how often they generate good results). This is an important part that we have not been addressing as we are not sure how to evaluate it. 
 
-Despite the consistency problem with our model, we decided to use our survey to compare different methods of post processing.  We chose 3 different choruses (each constructed using a different post process algorithm) that did not have obvious flaws (like repeated words).  One chorus was made using our normal rhyming algorithm, the next chorus was made using our strict rhyming algorithm, and the last chorus was made using no post processing at all.
+Despite the consistency problem with our model, we decided to use our survey to compare different methods of post processing.  We chose 3 different choruses (each constructed using a different post processing algorithm) that did not have obvious flaws (like repeated words).  One chorus was made using our normal rhyming algorithm, the next chorus was made using our strict rhyming algorithm, and the last chorus was made using no post processing at all.
 
 After surveying 32 people, here are the averages we got:
 
@@ -119,6 +119,6 @@ After surveying 32 people, here are the averages we got:
 ## Planned Improvements ##
 As we initially planned with this project, we plan on making a frontend UI for our model. It will allow the user to select a genre, input a topic, input rhymings schemes, and receive a complete song with the given options.
 
-Also one of our initial goals with this project, we plan on gathering lyrics from different genres using the Genius API in order to train more models on different genres. 
+Also one of our initial goals with this project, we plan on gathering lyrics from different genres (ie: hip hop and country) using the Genius API in order to train more models on different genres. 
 
 One of the problems that has been with us since the start is that some generations from our model repeat a word such as 'you' or 'the' many times one after the other. We plan on combatting this by setting a limit (2 or 3) on how many times a single word can repeat in one line. This should slightly improve the quality of our outputs.
