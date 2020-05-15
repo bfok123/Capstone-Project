@@ -1,9 +1,9 @@
 import json 
 from textgenrnn import textgenrnn
 
-f = open('sections_week8.json')
+f = open('sections_week9.json')
 data = json.load(f)
-batchsize = 8192
+batchsize = 4096
 rnn_size = 128
 dim_embeddings = 100
 max_words = 40000
@@ -20,7 +20,7 @@ intro_gen.train_on_texts(data['Intro'],
                         dim_embeddings=dim_embeddings,
                         max_words=max_words,
                         batch_size=batchsize)
-
+"""
 print ('Training chorus model')
 chorus_gen = textgenrnn(name="chorus_model")
 chorus_gen.train_on_texts(data['Chorus'],
@@ -32,7 +32,7 @@ chorus_gen.train_on_texts(data['Chorus'],
                           dim_embeddings=dim_embeddings,
                           max_words=max_words,
                           batch_size=batchsize)
-"""
+
 print ('Training verse model')
 verse_gen = textgenrnn(name="verse_model")
 verse_gen.train_on_texts(data['Verse'],
@@ -69,3 +69,4 @@ outro_gen.train_on_texts(data['Outro'],
                          dim_embeddings=dim_embeddings,
                          max_words=max_words,
                          batch_size=batchsize)
+"""
