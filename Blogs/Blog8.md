@@ -69,7 +69,7 @@ you you you
 # Strict Rhyming #
 
 \[Intro\]
-- - with - - she - - me with
+with - - she - - me with
 the with
 ste be - - be
 in be
