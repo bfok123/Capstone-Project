@@ -68,23 +68,53 @@ you you you
 
 # Strict Rhyming #
 
-\[Intro\]  
+\[Intro\]
+- - with - - she - - me with
+the with
+ste be - - be
+in be
 
-\[Rhyming Verse\]  
+\[Chorus\]
+so far, but can t do it all is enough
+roll with us
+and all the kings, had the things that i had high
+jet plane headed up to the sky (to the sky  
 
-\[Chorus\]  
+\[ Verse\]
+mix doors down down the people guy
+with used green come with come to i
+t and t about and t about
+i could i m the figureoutwhat t just t about  
 
-\[Non-Rhyming Verse\]  
+\[Bridge\]
+oh you happily i,, know i
+make, dream that dream yes, i
+(hear this
+hear this 
 
-\[Bridge\]  
-
-\[Outro\]  
+\[Outro\]
+wanna no no under no
+bright diamond shine shine yeah yeah yeah oh
+and and
+paint face and and and and and and and and and and and and and and and paint and and and and and and
 
 ## Evaluation ##
 
+By just looking at the lines being produced, we can see that there are still some lines that make no sense, have bad puncuation, and repeat words way too often.  We have will address this problem next week. Another problem with our model is that it is hard to evaluate the consistency of each model (how often they generate good results).  This is an important part that we have not been addressing as we are not sure how to evaluate it. 
+
+Despite the consistency problem with our model, we decided to use our survey to compare different methods of post processing.  We chose 3 different choruses (each constructed using a different post process algorithm) that did not have obvious flaws (like repeated words).  One chorus was made using our normal rhyming algorithm, the next chorus was made using our strict rhyming algorithm, and the last chorus was made using no post processing at all.
+
+After surveying 32 people, here are the averages we got:
+
+|               | Fluency       | Coherency  | Does it Rhyme? | % that thought they were real |
+| ------------- |---------------| -----------| ---------------| ------------------------------|
+| ** Original Rhyming Algorithm ** |2.25|2.25|3.844|28.125%|
+| ** Strict Rhyming Algorithm **   |2.938|2.844|4.063|50%|
+| ** No Rhyming Algorithm **       |2.531|2.625|1.594|21.875%|
+| ** Real Chorus **                |3.875|4.094|2.469|90.625%|
 
 ## Planned Improvements ##
-As we initially planned with this project, we plan on making a frontend UI for our model. It will allow the user to select a genre, input a topic, input rhymings schemes, and receive an a complete song with the given options.
+As we initially planned with this project, we plan on making a frontend UI for our model. It will allow the user to select a genre, input a topic, input rhymings schemes, and receive a complete song with the given options.
 
 Also one of our initial goals with this project, we plan on gathering lyrics from different genres using the Genius API in order to train more models on different genres. 
 
