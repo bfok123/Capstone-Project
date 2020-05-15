@@ -16,14 +16,57 @@ Last week we combined our original lyric datasets (sectioned by Chorus, Verse, e
 15,878 Outros  
 
 ## Rhyming Engineering ##
-Last week, we continued to use Phyme - a rhyming API, to post-process our generated lines. We generated a bunch of lines, put rhyming lines together using Phyme, sorted the rhymes by the distance between lines, and outputted the result. However, our results from this approach weren't as good as we had hoped.
+Last week, we continued to use Phyme - a rhyming API, to post-process our generated lines. We generated a bunch of lines, put rhyming lines together using Phyme, sorted the rhymes by the distance between lines, and outputted the result. Our results were fine, but we thought that we could further improve our output's context.
 
-This week, we decided to make our rhyming algorithm even more strict, by forcing our outputted rhyming lines to be right next to each other in the generation. Since lines that are directly next to each other in the initial generation will have the most consistency in terms of context, we wanted to take full advantage of this in order to improve the quality of our output. The results, which you can see in the 'Examples' section below, were slightly better than before.
+This week, we decided to make our rhyming algorithm even more strict, by forcing our outputted rhyming lines to be right next to each other in the generation. Since lines that are directly next to each other in the initial generation will have the most consistency in terms of context, we wanted to take full advantage of this in order to improve the quality of our output. Unfortunately, this new approach did not work as well as we had hoped, as the chances of getting two rhyming lines directly next to each other in the initial generation is low so we needed to generate very many lines in order to get an output with reasonable length.
 
 ## Song Topics ##
 One of our intial goals for this project was to allow users to input a topic for the generation and get back a song that revolves around the given topic. Our current idea to do this is to use the ```prefix``` input that our model can take in for generation, and have the model do text completion based on the ```prefix```. Since we are using an RNN model with Attention, our idea is that the context from the prefix should hold throughout the generation and act as a 'topic' for our output. Here are some examples using this idea:
 
 ## Examples ##
+
+# No Rhyming #
+
+\[Chorus\]
+i think about you, baby
+ill be your love, girl, know
+maybe we can t have
+sorry, i never hurt the pain you left danced
+spread your wings as heaven there and good fade god
+
+# Normal Rhyming #
+
+\[Intro\]
+hooked i on you you
+fucked i went tired the understand tell do
+ever people some i spreading to i
+ladies i it my see my
+
+\[Chorus\]
+today back, no name
+i just throw it stain to the heart that is heart is use to heal the pain
+don t wanna wait on front, i won t lie
+sudden half you, don t buy
+
+\[Verse\]
+sink till baby you were high the dawn
+don't a guy guy needs a song
+and some money some nights of the tube and over and waiting too real show up
+heads i m am but
+
+\[Bridge\]
+gonna and the and and you you
+you the and and you
+before his - his his getting his falling
+middle night the away the it baby a the baby in too the the far baby, baby be dark from in in
+
+\[Outro\]
+worse can
+and you
+i until problem my in with goddamn
+you you you
+
+# Strict Rhyming #
 
 \[Intro\]  
 
@@ -38,40 +81,11 @@ One of our intial goals for this project was to allow users to input a topic for
 \[Outro\]  
 
 ## Evaluation ##
-Overall, the quality of generated lyrics for each section except for chorus was better. Our chorus model kept plagiarizing actual choruses and the ones that were not plagiarized did not sound as good as last week. This might be because the chorus data has many duplicates and isn't shuffled so certain words trigger plagiarization of several lines.
 
-Using our evaluation survey, we pitted last week's generated chorus with P!NK's chorus in "Slut Like You". Our chorus scored lower in fluency and coherency and was able to trick 4/15 (26.7%) people into thinking our generated lyrics were real and P!NK's were fake.
-
-\[Generated Lyrics\]  
-From a left of dreams  
-Even though it seems  
-To pretend as crazy i can see  
-From a left of dreams  
-Even though it seems  
-There’s nothing left to me  
-
-2.8 - Fluency  
-2.67 - Coherency  
-N/A - Topic  
-4.27 - Does it rhyme?  
-
-\[Chorus from Slut Like You\]  
-I got a little piece of you-hoo  
-And it's just like woohoo  
-Wham, bam, thank you, ma'am!  
-Woohoo  
-You say you're looking for a foo-ool  
-And I'm just like me, too  
-I'm gonna let ya know the truth  
-
-3.53 - Fluency  
-3.53 - Coherency  
-N/A - Topic  
-4 - Does it rhyme?  
 
 ## Planned Improvements ##
-frontend
+As we initially planned with this project, we plan on making a frontend UI for our model. It will allow the user to select a genre, input a topic, input rhymings schemes, and receive an a complete song with the given options.
 
-more genres
+Also one of our initial goals with this project, we plan on gathering lyrics from different genres using the Genius API in order to train more models on different genres. 
 
-set limit on how many times a word can repeat in one line
+One of the problems that has been with us since the start is that some generations from our model repeat a word such as 'you' or 'the' many times one after the other. We plan on combatting this by setting a limit (2 or 3) on how many times a single word can repeat in one line. This should slightly improve the quality of our outputs.
