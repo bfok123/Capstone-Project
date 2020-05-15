@@ -73,3 +73,5 @@ N/A - Topic
 frontend
 
 more genres
+
+set limit on how many times a word can repeat in one line
