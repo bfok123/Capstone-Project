@@ -27,75 +27,75 @@ One of our intial goals for this project was to allow users to input a topic for
 
 # No Rhyming #
 
-\[Chorus\] 
-i think about you, baby 
-ill be your love, girl, know 
-maybe we can t have 
-sorry, i never hurt the pain you left danced 
-spread your wings as heaven there and good fade god 
+\[Chorus\]  
+i think about you, baby  
+ill be your love, girl, know  
+maybe we can t have  
+sorry, i never hurt the pain you left danced  
+spread your wings as heaven there and good fade god  
 
 # Normal Rhyming #
 
-\[Intro\] 
-hooked i on you you 
-fucked i went tired the understand tell do 
-ever people some i spreading to i 
-ladies i it my see my 
+\[Intro\]  
+hooked i on you you  
+fucked i went tired the understand tell do  
+ever people some i spreading to i  
+ladies i it my see my  
 
-\[Chorus\] 
-today back, no name 
-i just throw it stain to the heart that is heart is use to heal the pain 
-don t wanna wait on front, i won t lie 
-sudden half you, don t buy 
+\[Chorus\]  
+today back, no name  
+i just throw it stain to the heart that is heart is use to heal the pain  
+don t wanna wait on front, i won t lie  
+sudden half you, don t buy  
 
-\[Verse\] 
-sink till baby you were high the dawn 
-don't a guy guy needs a song 
-and some money some nights of the tube and over and waiting too real show up 
-heads i m am but 
+\[Verse\]  
+sink till baby you were high the dawn  
+don't a guy guy needs a song  
+and some money some nights of the tube and over and waiting too real show up  
+heads i m am but  
 
-\[Bridge\] 
-gonna and the and and you you 
-you the and and you 
-before his - his his getting his falling 
-middle night the away the it baby a the baby in too the the far baby, baby be dark from in in 
+\[Bridge\]  
+gonna and the and and you you  
+you the and and you  
+before his - his his getting his falling  
+middle night the away the it baby a the baby in too the the far baby, baby be dark from in in  
 
-\[Outro\] 
-worse can 
-and you 
-i until problem my in with goddamn 
-you you you 
+\[Outro\]  
+worse can  
+and you  
+i until problem my in with goddamn  
+you you you  
 
 # Strict Rhyming #
 
-\[Intro\] 
-with - - she - - me with 
-the with 
-ste be - - be 
-in be 
+\[Intro\]  
+with - - she - - me with  
+the with  
+ste be - - be  
+in be  
 
-\[Chorus\] 
-so far, but can t do it all is enough 
-roll with us 
-and all the kings, had the things that i had high 
-jet plane headed up to the sky (to the sky 
+\[Chorus\]  
+so far, but can t do it all is enough  
+roll with us  
+and all the kings, had the things that i had high  
+jet plane headed up to the sky (to the sky  
 
-\[ Verse\] 
-mix doors down down the people guy 
-with used green come with come to i 
-t and t about and t about 
-i could i m the figureoutwhat t just t about 
+\[ Verse\]  
+mix doors down down the people guy  
+with used green come with come to i  
+t and t about and t about  
+i could i m the figureoutwhat t just t about  
 
-\[Bridge\]
-oh you happily i,, know i 
-make, dream that dream yes, i 
-(hear this 
-hear this 
+\[Bridge\]  
+oh you happily i,, know i  
+make, dream that dream yes, i  
+(hear this  
+hear this  
 
-\[Outro\] 
-wanna no no under no 
-bright diamond shine shine yeah yeah yeah oh 
-and and 
+\[Outro\]  
+wanna no no under no  
+bright diamond shine shine yeah yeah yeah oh  
+and and  
 paint face and and and and and and and and and and and and and and and paint and and and and and and 
 
 ## Evaluation ##
