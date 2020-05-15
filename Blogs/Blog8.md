@@ -113,6 +113,9 @@ After surveying 32 people, here are the averages we got:
 | **No Rhyming Algorithm**       |2.531|2.625|1.594|21.875%|
 | **Real Chorus**                |3.875|4.094|2.469|90.625%|
 
+
+(Side note: 90% of the people we surveyed listen to music often, 78% play or played an instrument, and 6% write their own lyrics)
+
 ## Planned Improvements ##
 As we initially planned with this project, we plan on making a frontend UI for our model. It will allow the user to select a genre, input a topic, input rhymings schemes, and receive a complete song with the given options.
 
