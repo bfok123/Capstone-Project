@@ -1,14 +1,14 @@
 import lyricsgenius
 genius = lyricsgenius.Genius("_C9-biya5mg0NgX-DaYQMc9uNpvsIho2Z_86ngRT_6NLZ0FzzKCuNKyeVtE4G1OR")
 
-genius.verbose = False # Turn off status messages
+# genius.verbose = False # Turn off status messages
 genius.remove_section_headers = False # Remove section headers (e.g. [Chorus]) from lyrics when searching
 genius.skip_non_songs = True # Include hits thought to be non-songs (e.g. track lists)
 genius.excluded_terms = ["(Remix)", "(Live)"] # Exclude songs with these words in their title
 
-file = open("sams_actually_generating_lyrics.txt", 'w')
+file = open("minecraft_lyrics.txt", 'w')
 file.write('')
-file = open("sams_actually_generating_lyrics.txt", 'a')
+file = open("minecraft_lyrics.txt", 'a')
 
 artists = ['Lizzo', 'Katy Perry', 'Imagine Dragons', 'Lady Gaga', 'Maroon 5', 'Camila Cabello', 'Sam Smith', '5 Seconds of Summer', 'Bruno Mars', 'Drake']
 artists_country = ['Luke Combs', 'Dan + Shay', 'Kane Brown', 
@@ -25,12 +25,17 @@ artists_hiphop = ['Khalid', 'Drake', 'Lil Nas X', 'Travis Scott',
                   'Lizzo', '21 Savage', 'XXXTENTACION',
                   'Chris Brown', 'Kodak Black', 'Gunna',
                   'J. Cole', 'Young Thug', 'Lil Tecca',
-                  'YoungBoy Never Broke Again']
+                  'YoungBoy Never Broke Again', 'YNW Melly',
+                  'Ella Mai', 'Swae Lee', 'Eminem', 'NF',
+                  'DJ Khaled', 'Offset', 'Lil Wayne',
+                  'Tyler, The creator', 'Future']
+artists_hiphop= ['Lil Wayne',
+                  'Tyler, The creator', 'Future']
 artists_minecraft = ['MineCraft Awesome Parodys', 'ReptileLegit',
                      'CaptainSparklez', 'TryHardNinja',
                      'BebopVox', 'Brad Knauber']
-for artist_name in artists:
-	artist = genius.search_artist(artist_name, max_songs=20)
+for artist_name in artists_minecraft:
+	artist = genius.search_artist(artist_name, max_songs=40)
 	for song in artist.songs:
 		try:
 			file.write(song.lyrics)
