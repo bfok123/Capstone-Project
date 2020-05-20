@@ -36,6 +36,7 @@ with open(os.path.join(current_dir, save_loc), 'w') as f:
     json.dump(sections, f)
     
 #%% check new json
+save_loc= 'sections_hiphop.json'
 with open(os.path.join(current_dir, save_loc)) as sections_file:
     checkjson = json.load(sections_file)
     
