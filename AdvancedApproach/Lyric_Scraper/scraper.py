@@ -6,19 +6,22 @@ genius.remove_section_headers = False # Remove section headers (e.g. [Chorus]) f
 genius.skip_non_songs = True # Include hits thought to be non-songs (e.g. track lists)
 genius.excluded_terms = ["(Remix)", "(Live)"] # Exclude songs with these words in their title
 
-file = open("minecraft_lyrics.txt", 'w')
+file = open("country_lyrics.txt", 'w')
 file.write('')
-file = open("minecraft_lyrics.txt", 'a')
+file = open("country_lyrics.txt", 'a')
 
 artists = ['Lizzo', 'Katy Perry', 'Imagine Dragons', 'Lady Gaga', 'Maroon 5', 'Camila Cabello', 'Sam Smith', '5 Seconds of Summer', 'Bruno Mars', 'Drake']
-artists_country = ['Luke Combs', 'Dan + Shay', 'Kane Brown', 
+artists_country = ['Luke Combs', 'Dan + Shay', 'Kane Brown',
                    'Thomas Rhett', 'Florida Georgia Line',
                    'Chris Stapleton', 'Morgan Wallen',
                    'Maren Morris', 'Jason Aldean', 'Blake Shelton',
                    'Luke Bryan', 'Brett Young', 'Carrie Underwood',
                    'Jon Pardi', 'Zac Brown Band', 'George Strait',
                    'Old Dominion', 'Eric Church', 'Lee Brice',
-                   'Kacey Musgraves']
+                   'Kacey Musgraves', 'Kelsea Ballerini', 'Dierks Bentley',
+                   'Blanco Brown', 'Jordan Davis', 'Tim McGraw', 'Chris Lane',
+                   'Cody Johnson', 'Mitchell Tenpenny' , 'Chase Rice',
+                   'Russell Dickerson']
 artists_hiphop = ['Khalid', 'Drake', 'Lil Nas X', 'Travis Scott',
                   'Juice WRLD', 'DaBaby', 'Cardi B', 'Lil Baby',
                   'Meek Mill', 'A Boogie Wit da Hoodie',
@@ -34,7 +37,7 @@ artists_hiphop= ['Lil Wayne',
 artists_minecraft = ['MineCraft Awesome Parodys', 'ReptileLegit',
                      'CaptainSparklez', 'TryHardNinja',
                      'BebopVox', 'Brad Knauber']
-for artist_name in artists_minecraft:
+for artist_name in artists_country:
 	artist = genius.search_artist(artist_name, max_songs=40)
 	for song in artist.songs:
 		try:
