@@ -8,14 +8,14 @@ import os
 import json
 
 #%% load old json
+save_loc = 'sections_minecraft.json'
+
 current_dir = os.path.dirname(__file__)
-with open(os.path.join(current_dir, 'sections_minecraft.json')) as sections_file:
+with open(os.path.join(current_dir, save_loc)) as sections_file:
     sections = json.load(sections_file)
 
-save_loc = 'minecraft_lyrics.txt'
-    
 #%% append new data to json
-with open(os.path.join(current_dir, save_loc)) as genius_songs:
+with open(os.path.join(current_dir, 'minecraft_lyrics.txt')) as genius_songs:
     songs = genius_songs.readlines()
     
 for i in range(len(songs)):
