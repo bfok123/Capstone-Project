@@ -1,9 +1,9 @@
 import json 
 from textgenrnn import textgenrnn
 
-f = open('sections_week9.json')
+f = open('sections_country.json')
 data = json.load(f)
-batchsize = 4096
+batchsize = 1024
 rnn_size = 128
 dim_embeddings = 100
 max_words = 40000
@@ -32,7 +32,7 @@ chorus_gen.train_on_texts(data['Chorus'],
                           dim_embeddings=dim_embeddings,
                           max_words=max_words,
                           batch_size=batchsize)
-
+"""
 print ('Training verse model')
 verse_gen = textgenrnn(name="verse_model")
 verse_gen.train_on_texts(data['Verse'],
@@ -56,7 +56,7 @@ bridge_gen.train_on_texts(data['Bridge'],
                           dim_embeddings=dim_embeddings,
                           max_words=max_words,
                           batch_size=batchsize)
-"""
+
 
 print ('Training outro model')
 outro_gen = textgenrnn(name="outro_model")
@@ -70,3 +70,20 @@ outro_gen.train_on_texts(data['Outro'],
                          max_words=max_words,
                          batch_size=batchsize)
 """
+
+
+while not_enough_rhymes:
+    add_more_rhymes(model, rhyme_dictionary, lines, topic, 5)
+
+    required_rhyme_counts = []
+    for letter in rhyme_counts.keys():
+        required_rhyme_counts.add(len(rhyme_counts[letter]))
+
+    for rhyme in rhyme_dictionary:
+        rhyme_count = len(rhyme_dictionary[rhyme])
+        if (rhyme_count in required_rhyme_counts):
+            required_rhyme_counts.remove(rhyme_count)
+
+    if (len(required_rhyme_counts) == 0) {
+        not_enough_rhymes = False
+    }
