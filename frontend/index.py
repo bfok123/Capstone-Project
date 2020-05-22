@@ -6,6 +6,7 @@ Created on Thu May 14 16:50:05 2020
 """
 
 import tkinter as tk
+import gen_lyrics
 
 def onCheck(section):
     if section == 'intro':
@@ -20,19 +21,27 @@ def onCheck(section):
         outro_rhyme.configure(state=(tk.DISABLED if var_outro.get() == 0 else tk.NORMAL))
         
 def generate():
-    model = var.get()
+    genre = var.get()
     topic = entry_topic.get()
     text_gen.configure(state=tk.NORMAL)
     text_gen.delete(1.0, tk.END)
     for key in section_vars:
         section_var = section_vars[key]
         if section_var.get() == 1:
-            # get lyrics with model and key and rhyming pattern
-            rhyming_pattern = section_rhymes[key].get()
+            if genre not in models_by_genre.keys():
+                models_by_genre[genre] = gen_lyrics.models(genre)
+            model = models_by_genre[genre][key] # get textgenrnn object
+            rhyme_scheme = section_rhymes[key].get().upper() # get rhyme scheme
+            result = gen_lyrics.generateLyrics(model, rhyme_scheme, topic)
             text_gen.insert(tk.END, '[' + key.capitalize() + ']\n')
-            text_gen.insert(tk.END, rhyming_pattern + '\n\n')
+            text_gen.insert(tk.END, result + '\n')
     text_gen.configure(state=tk.DISABLED)
-        
+    
+    
+print('loading pop model')
+models_by_genre = {}
+models_by_genre['pop'] = gen_lyrics.models('pop')
+print('finished loading pop model')
 
 window = tk.Tk()
 window.title("Lyric Generator")
@@ -75,7 +84,7 @@ lbl_topic = tk.Label(topic_frame, text="Topic: ")
 entry_topic = tk.Entry(topic_frame, width=20)
 
 frame = tk.Frame() # generated text textbox and scrollbar
-text_gen = tk.Text(frame, width=50, state=tk.DISABLED)
+text_gen = tk.Text(frame, width=60, state=tk.DISABLED)
 scrollbar = tk.Scrollbar(frame, command=text_gen.yview)
 text_gen['yscrollcommand'] = scrollbar.set
 
