@@ -26,4 +26,4 @@ Choose a genre, optionally define a topic, choose which sections to generate, ch
 ## Next Steps  ##
 1. Train the rest of the models (all Minecraft models and Country Intro models)
 2. Add more genres
-3. Optimize post-processing algorithms
+3. Optimize post-processing algorithms. Right now it takes over a minute to generate an AABB section which means it can take over 5 minutes if a user wants to generate a whole song. We think there are a few places our post-processing algorithm can be optimized.
