@@ -23,10 +23,7 @@ Choose a genre, optionally define a topic, choose which sections to generate, ch
 ### No Rhyming ###
 
 
-## Evaluation ##
-
-
-## Planned Improvements ##
-
-
-
+## Next Steps  ##
+1. Train the rest of the models (all Minecraft models and Country Intro models)
+2. Add more genres
+3. Optimize post-processing algorithms
