@@ -14,9 +14,6 @@ Breakdown of datasets:
 ## Post-processing ##
 
 
-## Song Topics ##
-One of our intial goals for this project was to allow users to input a topic for the generation and get back a song that revolves around the given topic. Our current idea to do this is to use the ```prefix``` input that our model can take in for generation, and have the model do text completion based on the ```prefix```. Since we are using an RNN model with Attention, our idea is that the context from the prefix should hold throughout the generation and act as a 'topic' for our output. Here are some examples using this idea:
-
 ## Examples ##
 
 # No Rhyming #
