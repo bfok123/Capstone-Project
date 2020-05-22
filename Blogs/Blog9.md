@@ -2,7 +2,7 @@
 
 **Due May 21:**   
 
-Datasets for other genres, streamlined rhyming post-processing, attached to frontend, topic support.
+Datasets for other genres, streamlined rhyming post-processing, attached to frontend, topic selection. We did not perform an evaluation this week because we didn't have any new models or algorithms that we needed to evaluate against each other. 
 
 ## New Datasets ##
 We were happy with our pop dataset that we created by scraping Genius Lyrics last week so this week we gathered datasets for other genres, hip-hop, country, and Minecraft, like we planned in our project proposal. We scraped 40 songs from each of the 30 top artists of each genre in 2019 except for Minecraft which we could only find 6 high-profile artists on Genius Lyrics. Like the pop dataset, we split each of the other datasets into intros, verses, choruses, bridges, and outros. We only had time to train the models for hip-hop this week.
