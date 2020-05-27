@@ -57,7 +57,7 @@ def models(genre):
 #Output: dictionary where the keys are the rhymes and the values are a list of lines that rhyme
 def add_more_rhymes(model, rhyme_dict, topic, num_generations):
 
-    lyrics = model.generate(num_generations, temperature=1.1, max_gen_length=1000, return_as_list=True, prefix=topic)
+    lyrics = model.generate(num_generations, temperature=1.1, max_gen_length=20, return_as_list=True, prefix=topic)
     
     lines = []
     for line in lyrics:

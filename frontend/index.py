@@ -22,7 +22,7 @@ def onCheck(section):
         
 def generate():
     genre = var.get()
-    topic = entry_topic.get()
+    topic = entry_topic.get().lower()
     text_gen.configure(state=tk.NORMAL)
     text_gen.delete(1.0, tk.END)
     for key in section_vars:
@@ -33,9 +33,10 @@ def generate():
             model = models_by_genre[genre][key] # get textgenrnn object
             rhyme_scheme = section_rhymes[key].get().upper() # get rhyme scheme
             result = gen_lyrics.generateLyrics(model, rhyme_scheme, topic)
+            text_gen.configure(state=tk.NORMAL)
             text_gen.insert(tk.END, '[' + key.capitalize() + ']\n')
             text_gen.insert(tk.END, result + '\n')
-    text_gen.configure(state=tk.DISABLED)
+            text_gen.configure(state=tk.DISABLED)
     
     
 print('loading pop model')
@@ -80,13 +81,15 @@ lbl_ex = tk.Label(sections_frame, text="ex: AABB")
 btn_gen = tk.Button(window, text="Generate", command=generate)
 
 topic_frame = tk.Frame()
-lbl_topic = tk.Label(topic_frame, text="Topic: ")
+lbl_topic = tk.Label(topic_frame, text="Topic (Optional): ")
 entry_topic = tk.Entry(topic_frame, width=20)
 
 frame = tk.Frame() # generated text textbox and scrollbar
-text_gen = tk.Text(frame, width=60, state=tk.DISABLED)
+text_gen = tk.Text(frame, width=70, state=tk.DISABLED)
 scrollbar = tk.Scrollbar(frame, command=text_gen.yview)
+scrollbarx = tk.Scrollbar(frame, command=text_gen.xview, orient='horizontal')
 text_gen['yscrollcommand'] = scrollbar.set
+text_gen['xscrollcommand'] = scrollbarx.set
 
 # GRID LAYOUT
 genre_frame.grid(column=0, row=0, padx=pad, pady=pad, sticky=tk.W)
@@ -115,10 +118,11 @@ bridge_rhyme.grid(column=1, row=3, pady=pad, padx=pad)
 outro_section.grid(column=0, row=4, pady=pad, padx=pad, sticky=tk.W)
 outro_rhyme.grid(column=1, row=4, pady=pad, padx=pad)
 
-btn_gen.grid(column=0, row=4, columnspan=5, padx=pad, pady=pad)
+btn_gen.grid(column=0, row=4, padx=90, pady=pad, sticky="w")
 
 frame.grid(column=0, row=5, padx=pad, pady=pad)
 text_gen.grid(column=0, row=0, pady=pad, padx=pad, sticky="nsew")
 scrollbar.grid(column=1, row=0, pady=pad, sticky="nsew")
+scrollbarx.grid(column=0, row=1, padx=pad, sticky="nsew")
 
 window.mainloop()

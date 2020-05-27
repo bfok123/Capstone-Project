@@ -6,6 +6,7 @@ Created on Tue May  5 18:26:33 2020
 """
 import os
 import json
+import re
 
 #%% load old json
 save_loc = 'sections_minecraft.json'
@@ -36,9 +37,14 @@ with open(os.path.join(current_dir, save_loc), 'w') as f:
     json.dump(sections, f)
     
 #%% check new json
-save_loc= 'sections_week9.json'
+save_loc= 'sections_country.json'
 with open(os.path.join(current_dir, save_loc)) as sections_file:
     checkjson = json.load(sections_file)
     
 for key in checkjson.keys():
     print(key, len(checkjson[key]))
+    
+#%% clean country lyrics
+lines_changed = 0
+for idx, line in enumerate(checkjson['Intro']):
+    checkjson['Intro'][idx] = re.sub(r'[^\x00-\x7f]',"'", line)
