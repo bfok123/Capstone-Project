@@ -1,7 +1,7 @@
 import json 
 from textgenrnn import textgenrnn
 
-f = open('sections_country.json')
+f = open('sections_minecraft.json')
 data = json.load(f)
 batchsize = 1024
 rnn_size = 128
@@ -10,7 +10,7 @@ max_words = 40000
 gen_epochs = 25
 
 
-'''
+
 print ('Training intro model')
 intro_gen = textgenrnn(name="intro_model")
 intro_gen.train_on_texts(data['Intro'],
@@ -34,7 +34,7 @@ chorus_gen.train_on_texts(data['Chorus'],
                           dim_embeddings=dim_embeddings,
                           max_words=max_words,
                           batch_size=batchsize)
-"""
+
 print ('Training verse model')
 verse_gen = textgenrnn(name="verse_model")
 verse_gen.train_on_texts(data['Verse'],
@@ -46,7 +46,7 @@ verse_gen.train_on_texts(data['Verse'],
                         dim_embeddings=dim_embeddings,
                         max_words=max_words,
                         batch_size=batchsize)
-'''
+
 print ('Training bridge model')
 bridge_gen = textgenrnn(name="bridge_model")
 bridge_gen.train_on_texts(data['Bridge'],
