@@ -22,21 +22,32 @@ def onCheck(section):
         
 def generate():
     genre = var.get()
-    topic = entry_topic.get()
+    topic = entry_topic.get().lower()
     text_gen.configure(state=tk.NORMAL)
     text_gen.delete(1.0, tk.END)
     for key in section_vars:
         section_var = section_vars[key]
+        if key == 'intro' and genre == 'country':
+            continue # country does not have intro
         if section_var.get() == 1:
             if genre not in models_by_genre.keys():
                 models_by_genre[genre] = gen_lyrics.models(genre)
             model = models_by_genre[genre][key] # get textgenrnn object
             rhyme_scheme = section_rhymes[key].get().upper() # get rhyme scheme
-            result = gen_lyrics.generateLyrics(model, rhyme_scheme, topic)
+            if entry_length.get() == '':
+                result = gen_lyrics.generateLyrics(model, rhyme_scheme, topic)
+            else:
+                result = gen_lyrics.generateLyrics(model, rhyme_scheme, topic, int(entry_length.get()))
+            text_gen.configure(state=tk.NORMAL)
             text_gen.insert(tk.END, '[' + key.capitalize() + ']\n')
             text_gen.insert(tk.END, result + '\n')
-    text_gen.configure(state=tk.DISABLED)
-    
+            text_gen.configure(state=tk.DISABLED)
+            
+def onCountry():
+    intro_section.configure(state=(tk.DISABLED if var.get() == 'country' else tk.NORMAL))
+    if var.get() == 'country':
+        intro_rhyme.configure(state=tk.DISABLED)
+    intro_section.deselect()
     
 print('loading pop model')
 models_by_genre = {}
@@ -51,10 +62,10 @@ genre_frame = tk.Frame()
 var = tk.StringVar() # radio button var
 var.set('pop')
 lbl_genre = tk.Label(genre_frame, text="Genre: ")
-r_btn_pop = tk.Radiobutton(genre_frame, text="Pop", variable=var, value='pop')
-r_btn_hiphop = tk.Radiobutton(genre_frame, text="Hip Hop", variable=var, value='hiphop')
-r_btn_country = tk.Radiobutton(genre_frame, text="Country", variable=var, value='country')
-r_btn_minecraft = tk.Radiobutton(genre_frame, text="Minecraft", variable=var, value='minecraft')
+r_btn_pop = tk.Radiobutton(genre_frame, text="Pop", variable=var, value='pop', command=onCountry)
+r_btn_hiphop = tk.Radiobutton(genre_frame, text="Hip Hop", variable=var, value='hiphop', command=onCountry)
+r_btn_country = tk.Radiobutton(genre_frame, text="Country", variable=var, value='country', command=onCountry)
+r_btn_minecraft = tk.Radiobutton(genre_frame, text="Minecraft", variable=var, value='minecraft', command=onCountry)
 
 sections_frame = tk.Frame()
 var_intro = tk.IntVar() # 1 means selected
@@ -80,13 +91,17 @@ lbl_ex = tk.Label(sections_frame, text="ex: AABB")
 btn_gen = tk.Button(window, text="Generate", command=generate)
 
 topic_frame = tk.Frame()
-lbl_topic = tk.Label(topic_frame, text="Topic: ")
+lbl_topic = tk.Label(topic_frame, text="Topic (Optional): ")
 entry_topic = tk.Entry(topic_frame, width=20)
+lbl_length = tk.Label(topic_frame, text="Max length of line (Optional): ")
+entry_length = tk.Entry(topic_frame, width=5)
 
 frame = tk.Frame() # generated text textbox and scrollbar
-text_gen = tk.Text(frame, width=60, state=tk.DISABLED)
+text_gen = tk.Text(frame, width=70, state=tk.DISABLED, wrap='none')
 scrollbar = tk.Scrollbar(frame, command=text_gen.yview)
+scrollbarx = tk.Scrollbar(frame, command=text_gen.xview, orient='horizontal')
 text_gen['yscrollcommand'] = scrollbar.set
+text_gen['xscrollcommand'] = scrollbarx.set
 
 # GRID LAYOUT
 genre_frame.grid(column=0, row=0, padx=pad, pady=pad, sticky=tk.W)
@@ -99,6 +114,8 @@ r_btn_minecraft.grid(column=4, row=0, padx=pad, pady=pad)
 topic_frame.grid(column=0, row=1, padx=pad, pady=pad, sticky=tk.W)
 lbl_topic.grid(column=0, row=0, padx=pad, pady=pad)
 entry_topic.grid(column=1, row=0, padx=pad, pady=pad, sticky=tk.W)
+lbl_length.grid(column=2, row=0, padx=pad, pady=pad, sticky=tk.W)
+entry_length.grid(column=3, row=0, padx=pad, pady=pad, sticky=tk.W)
 
 lbl_sections.grid(column=0, row=2, pady=pad, padx=2 * pad, sticky=tk.W)
 
@@ -115,10 +132,11 @@ bridge_rhyme.grid(column=1, row=3, pady=pad, padx=pad)
 outro_section.grid(column=0, row=4, pady=pad, padx=pad, sticky=tk.W)
 outro_rhyme.grid(column=1, row=4, pady=pad, padx=pad)
 
-btn_gen.grid(column=0, row=4, columnspan=5, padx=pad, pady=pad)
+btn_gen.grid(column=0, row=4, padx=90, pady=pad, sticky="w")
 
 frame.grid(column=0, row=5, padx=pad, pady=pad)
 text_gen.grid(column=0, row=0, pady=pad, padx=pad, sticky="nsew")
 scrollbar.grid(column=1, row=0, pady=pad, sticky="nsew")
+scrollbarx.grid(column=0, row=1, padx=pad, sticky="nsew")
 
 window.mainloop()
