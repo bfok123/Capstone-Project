@@ -34,7 +34,10 @@ def generate():
                 models_by_genre[genre] = gen_lyrics.models(genre)
             model = models_by_genre[genre][key] # get textgenrnn object
             rhyme_scheme = section_rhymes[key].get().upper() # get rhyme scheme
-            result = gen_lyrics.generateLyrics(model, rhyme_scheme, topic)
+            if entry_length.get() == '':
+                result = gen_lyrics.generateLyrics(model, rhyme_scheme, topic)
+            else:
+                result = gen_lyrics.generateLyrics(model, rhyme_scheme, topic, int(entry_length.get()))
             text_gen.configure(state=tk.NORMAL)
             text_gen.insert(tk.END, '[' + key.capitalize() + ']\n')
             text_gen.insert(tk.END, result + '\n')
@@ -90,6 +93,8 @@ btn_gen = tk.Button(window, text="Generate", command=generate)
 topic_frame = tk.Frame()
 lbl_topic = tk.Label(topic_frame, text="Topic (Optional): ")
 entry_topic = tk.Entry(topic_frame, width=20)
+lbl_length = tk.Label(topic_frame, text="Max length of line (Optional): ")
+entry_length = tk.Entry(topic_frame, width=5)
 
 frame = tk.Frame() # generated text textbox and scrollbar
 text_gen = tk.Text(frame, width=70, state=tk.DISABLED, wrap='none')
@@ -109,6 +114,8 @@ r_btn_minecraft.grid(column=4, row=0, padx=pad, pady=pad)
 topic_frame.grid(column=0, row=1, padx=pad, pady=pad, sticky=tk.W)
 lbl_topic.grid(column=0, row=0, padx=pad, pady=pad)
 entry_topic.grid(column=1, row=0, padx=pad, pady=pad, sticky=tk.W)
+lbl_length.grid(column=2, row=0, padx=pad, pady=pad, sticky=tk.W)
+entry_length.grid(column=3, row=0, padx=pad, pady=pad, sticky=tk.W)
 
 lbl_sections.grid(column=0, row=2, pady=pad, padx=2 * pad, sticky=tk.W)
 

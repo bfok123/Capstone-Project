@@ -56,9 +56,9 @@ def models(genre):
 #       rhyme_dict - dictionary to add rhymes to
 #       num_generations - number of generations to make
 #Output: dictionary where the keys are the rhymes and the values are a list of lines that rhyme
-def add_more_rhymes(model, rhyme_dict, topic, num_generations):
+def add_more_rhymes(model, rhyme_dict, topic, num_generations, max_gen_length=50):
 
-    lyrics = model.generate(num_generations, temperature=1.1, max_gen_length=25, return_as_list=True, prefix=topic)
+    lyrics = model.generate(num_generations, temperature=1.1, max_gen_length=max_gen_length, return_as_list=True, prefix=topic)
     
     lines = []
     for line in lyrics:
@@ -67,14 +67,15 @@ def add_more_rhymes(model, rhyme_dict, topic, num_generations):
             split.pop(0)
         for l in split:
             
-            l = re.sub(r',|\(|\)|(chorus)|(verse 1 )|-|(intro)', '', l)
-            l = re.sub(r'\nt', '\n', l)
-            l = re.sub(r'(n\st\s|n\st$|n\st\n)', 'n\'t ', l)
-            l = re.sub(r'(\st\s|\st$|\st\n)', ' ', l)
-            l = re.sub(r'(\sm\s|\sm$|\sm\n)', '\'m ', l)
-            l = re.sub(r'(\ss\s|\ss$|\ss\n)', '\'s ', l)
-            l = re.sub(r'(\se\s|\se$|\se\n)', ' ', l)
-            l = re.sub(r'(\sb\s|\sb$|\sb\n)', ' ', l)
+            l = re.sub(r',|\(|\)|(chorus)|(verse 1 )|-|(intro)', '', l) # section garbage
+            l = re.sub(r"'", " ", l)                                    # replaces apostrophes with spaces
+            l = re.sub(r'\nt', '\n', l)                                 # replaces t at the beginning of lines with blank
+            l = re.sub(r'(n\st\s|n\st$|n\st\n)', 'n\'t ', l)            # replaces "n t " with  "n't"
+            l = re.sub(r'(\st\s|\st$|\st\n)', ' ', l)                   # replaces " t " with blank
+            l = re.sub(r'(\sm\s|\sm$|\sm\n)', '\'m ', l)                # replaces " m " with "'m"
+            l = re.sub(r'(\ss\s|\ss$|\ss\n)', '\'s ', l)                # replaces " s " with "'s"
+            l = re.sub(r'(\se\s|\se$|\se\n)', ' ', l)                   # replaces " e " with " "
+            l = re.sub(r'(\sb\s|\sb$|\sb\n)', ' ', l)                   # replaces " b " with " "
             words = l.split()
 
             words = [i for i, j in zip_longest(words, words[1:]) if i != j]
@@ -114,7 +115,7 @@ def add_more_rhymes(model, rhyme_dict, topic, num_generations):
 
 #Input: genre - string describing the users requested genre
 #       rhyme_scheme - string of capital letters detailing the rhyming scheme
-def generateLyrics(model, rhyme_scheme, topic):
+def generateLyrics(model, rhyme_scheme, topic, max_gen_length=50):
     # count the required number of lines for each letter/section of the rhyming scheme
     rhyme_counts = dict()
     lyrics_baby = ""
@@ -126,7 +127,7 @@ def generateLyrics(model, rhyme_scheme, topic):
     
     #Start by adding rhymes to our dictionary
     rhyme_dictionary = dict()
-    add_more_rhymes(model, rhyme_dictionary, topic, 1)
+    add_more_rhymes(model, rhyme_dictionary, topic, 1, max_gen_length)
     not_enough_rhymes = True
 
     #Keep adding rhymes until we have enough
@@ -157,7 +158,7 @@ def generateLyrics(model, rhyme_scheme, topic):
                 elif (not not not required_rhyme_counts[i] <= actual_rhyme_counts[i]):
                     break
         
-        add_more_rhymes(model, rhyme_dictionary, topic, 1)
+        add_more_rhymes(model, rhyme_dictionary, topic, 1, max_gen_length)
 
     # map each letter/section of the rhyming scheme to a rhyme in rhyme_dict
     used_rhymes = set()
