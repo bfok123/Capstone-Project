@@ -161,17 +161,29 @@ def generateLyrics(model, rhyme_scheme, topic, max_gen_length=50):
             
         add_more_rhymes(model, rhyme_dictionary, topic, 1, max_gen_length)
 
-    # map each letter/section of the rhyming scheme to a rhyme in rhyme_dict
-    used_rhymes = set()
-    letter_to_rhyme = dict()
+    # rhyme_dictionary -> list of lists -> sort by length of each list in reverse order
+    rhyme_lists = []
+    for rhyme in rhyme_dictionary.keys():
+        rhyme_lists.append(rhyme_dictionary[rhyme])
+    rhyme_lists = sorted(rhyme_lists, key=lambda rhyme_list: len(rhyme_list), reverse=True)
+    
+    # switch keys and values in rhyme_counts - ie: map rhyme to count to rhyme letter
+    count_to_rhymes = dict()
     for letter in rhyme_counts.keys():
-        for rhyme in rhyme_dictionary.keys():
-            # if the current rhyme has enough rhymes for the current letter in the rhyming scheme
-            # AND the rhyme hasn't been used, use it
-            if (len(rhyme_dictionary[rhyme]) >= rhyme_counts[letter] and rhyme not in used_rhymes):
-                letter_to_rhyme[letter] = rhyme_dictionary[rhyme]
-                used_rhymes.add(rhyme)
-                break
+        if (rhyme_counts[letter] not in count_to_rhymes):
+            count_to_rhymes[rhyme_counts[letter]] = []
+        count_to_rhymes[rhyme_counts[letter]].append(letter)
+        
+    # sort rhyme counts
+    rhyme_counts_list = sorted(list(rhyme_counts.values()), reverse=True)
+    
+    # map each letter/section of the rhyming scheme to a rhyme in rhyme_dict
+    letter_to_rhyme = dict()
+    for i in range(len(rhyme_counts_list)):
+        curr_letter = count_to_rhymes[rhyme_counts_list[i]].pop()
+        letter_to_rhyme[curr_letter] = rhyme_lists[i]     
+        
+        
     # print the results!
     rhyme_indices = dict()
     for char in rhyme_scheme:
@@ -183,4 +195,3 @@ def generateLyrics(model, rhyme_scheme, topic, max_gen_length=50):
             rhyme_indices[char] += 1
             
     return lyrics_baby
-
