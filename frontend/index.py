@@ -42,7 +42,9 @@ def generate():
             
 def onCountry():
     intro_section.configure(state=(tk.DISABLED if var.get() == 'country' else tk.NORMAL))
-    intro_rhyme.configure(state=(tk.DISABLED if var.get() == 'country' else tk.NORMAL))
+    if var.get() == 'country':
+        intro_rhyme.configure(state=tk.DISABLED)
+    intro_section.deselect()
     
 print('loading pop model')
 models_by_genre = {}
@@ -90,7 +92,7 @@ lbl_topic = tk.Label(topic_frame, text="Topic (Optional): ")
 entry_topic = tk.Entry(topic_frame, width=20)
 
 frame = tk.Frame() # generated text textbox and scrollbar
-text_gen = tk.Text(frame, width=70, state=tk.DISABLED)
+text_gen = tk.Text(frame, width=70, state=tk.DISABLED, wrap='none')
 scrollbar = tk.Scrollbar(frame, command=text_gen.yview)
 scrollbarx = tk.Scrollbar(frame, command=text_gen.xview, orient='horizontal')
 text_gen['yscrollcommand'] = scrollbar.set
