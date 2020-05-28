@@ -33,7 +33,7 @@ def doTheyRhyme(word1, word2):
 
     #print(rhyme_list)
 
-    if (word2 in rhyme_list):
+    if (word2 in rhyme_list and word1 != word2):
         return True
     else:
         return False
