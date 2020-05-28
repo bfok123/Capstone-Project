@@ -25,9 +25,10 @@ def models(genre):
     
     file_prefix = '../AdvancedApproach/generator/'
     
-    models['intro'] = textgenrnn(file_prefix + 'weights/' + genre + '/intro_model_weights.hdf5',
-                                    vocab_path=file_prefix + 'weights/' + genre + '/intro_model_vocab.json',
-                                    config_path=file_prefix + 'weights/' + genre + '/intro_model_config.json')
+    if genre != 'country':
+        models['intro'] = textgenrnn(file_prefix + 'weights/' + genre + '/intro_model_weights.hdf5',
+                                        vocab_path=file_prefix + 'weights/' + genre + '/intro_model_vocab.json',
+                                        config_path=file_prefix + 'weights/' + genre + '/intro_model_config.json')
 
     models['chorus'] = textgenrnn(file_prefix + 'weights/' + genre + '/chorus_model_weights.hdf5',
                                     vocab_path=file_prefix + 'weights/' + genre + '/chorus_model_vocab.json',
@@ -57,7 +58,7 @@ def models(genre):
 #Output: dictionary where the keys are the rhymes and the values are a list of lines that rhyme
 def add_more_rhymes(model, rhyme_dict, topic, num_generations):
 
-    lyrics = model.generate(num_generations, temperature=1.1, max_gen_length=20, return_as_list=True, prefix=topic)
+    lyrics = model.generate(num_generations, temperature=1.1, max_gen_length=25, return_as_list=True, prefix=topic)
     
     lines = []
     for line in lyrics:

@@ -27,6 +27,8 @@ def generate():
     text_gen.delete(1.0, tk.END)
     for key in section_vars:
         section_var = section_vars[key]
+        if key == 'intro' and genre == 'country':
+            continue # country does not have intro
         if section_var.get() == 1:
             if genre not in models_by_genre.keys():
                 models_by_genre[genre] = gen_lyrics.models(genre)
@@ -37,7 +39,10 @@ def generate():
             text_gen.insert(tk.END, '[' + key.capitalize() + ']\n')
             text_gen.insert(tk.END, result + '\n')
             text_gen.configure(state=tk.DISABLED)
-    
+            
+def onCountry():
+    intro_section.configure(state=(tk.DISABLED if var.get() == 'country' else tk.NORMAL))
+    intro_rhyme.configure(state=(tk.DISABLED if var.get() == 'country' else tk.NORMAL))
     
 print('loading pop model')
 models_by_genre = {}
@@ -52,10 +57,10 @@ genre_frame = tk.Frame()
 var = tk.StringVar() # radio button var
 var.set('pop')
 lbl_genre = tk.Label(genre_frame, text="Genre: ")
-r_btn_pop = tk.Radiobutton(genre_frame, text="Pop", variable=var, value='pop')
-r_btn_hiphop = tk.Radiobutton(genre_frame, text="Hip Hop", variable=var, value='hiphop')
-r_btn_country = tk.Radiobutton(genre_frame, text="Country", variable=var, value='country')
-r_btn_minecraft = tk.Radiobutton(genre_frame, text="Minecraft", variable=var, value='minecraft')
+r_btn_pop = tk.Radiobutton(genre_frame, text="Pop", variable=var, value='pop', command=onCountry)
+r_btn_hiphop = tk.Radiobutton(genre_frame, text="Hip Hop", variable=var, value='hiphop', command=onCountry)
+r_btn_country = tk.Radiobutton(genre_frame, text="Country", variable=var, value='country', command=onCountry)
+r_btn_minecraft = tk.Radiobutton(genre_frame, text="Minecraft", variable=var, value='minecraft', command=onCountry)
 
 sections_frame = tk.Frame()
 var_intro = tk.IntVar() # 1 means selected
