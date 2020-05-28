@@ -35,9 +35,15 @@ def generate():
             model = models_by_genre[genre][key] # get textgenrnn object
             rhyme_scheme = section_rhymes[key].get().upper() # get rhyme scheme
             if entry_length.get() == '':
-                result = gen_lyrics.generateLyrics(model, rhyme_scheme, topic)
+                if rhyme_scheme == '':
+                    result = gen_lyrics.generateNoRhyme(model, topic)
+                else:
+                    result = gen_lyrics.generateLyrics(model, rhyme_scheme, topic)
             else:
-                result = gen_lyrics.generateLyrics(model, rhyme_scheme, topic, int(entry_length.get()))
+                if rhyme_scheme == '':
+                    result = gen_lyrics.generateNoRhyme(model, topic, int(entry_length.get()))
+                else:
+                    result = gen_lyrics.generateLyrics(model, rhyme_scheme, topic, int(entry_length.get()))
             text_gen.configure(state=tk.NORMAL)
             text_gen.insert(tk.END, '[' + key.capitalize() + ']\n')
             text_gen.insert(tk.END, result + '\n')

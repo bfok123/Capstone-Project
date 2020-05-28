@@ -195,3 +195,19 @@ def generateLyrics(model, rhyme_scheme, topic, max_gen_length=50):
             rhyme_indices[char] += 1
             
     return lyrics_baby
+
+def generateNoRhyme(model, topic, max_gen_length=50):
+    l = model.generate(temperature=1.1, max_gen_length=max_gen_length, return_as_list=True, prefix=topic)
+    l = l[0]
+    l = re.sub(r',|\(|\)|(chorus)|(verse 1 )|-|(intro)', '', l) # section garbage
+    l = re.sub(r"'", " ", l)                                    # replaces apostrophes with spaces
+    l = re.sub(r'\nt', '\n', l)                                 # replaces t at the beginning of lines with blank
+    l = re.sub(r'(n\st\s|n\st$|n\st\n)', 'n\'t ', l)            # replaces "n t " with  "n't"
+    l = re.sub(r'(\st\s|\st$|\st\n)', ' ', l)                   # replaces " t " with blank
+    l = re.sub(r'(\sm\s|\sm$|\sm\n)', '\'m ', l)                # replaces " m " with "'m"
+    l = re.sub(r'(\ss\s|\ss$|\ss\n)', '\'s ', l)                # replaces " s " with "'s"
+    l = re.sub(r'(\se\s|\se$|\se\n)', ' ', l)                   # replaces " e " with " "
+    l = re.sub(r'(\sb\s|\sb$|\sb\n)', ' ', l)                   # replaces " b " with " "
+    l = re.sub(r'"', ' ', l)                                    # replaces '"' with " "
+    return l
+    
