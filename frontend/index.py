@@ -97,7 +97,7 @@ lbl_length = tk.Label(topic_frame, text="Max length of line (Optional): ")
 entry_length = tk.Entry(topic_frame, width=5)
 
 frame = tk.Frame() # generated text textbox and scrollbar
-text_gen = tk.Text(frame, width=70, state=tk.DISABLED, wrap='none')
+text_gen = tk.Text(frame, width=70, height=20, state=tk.DISABLED, wrap='none')
 scrollbar = tk.Scrollbar(frame, command=text_gen.yview)
 scrollbarx = tk.Scrollbar(frame, command=text_gen.xview, orient='horizontal')
 text_gen['yscrollcommand'] = scrollbar.set
