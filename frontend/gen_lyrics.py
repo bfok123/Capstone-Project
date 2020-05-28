@@ -76,6 +76,7 @@ def add_more_rhymes(model, rhyme_dict, topic, num_generations, max_gen_length=50
             l = re.sub(r'(\ss\s|\ss$|\ss\n)', '\'s ', l)                # replaces " s " with "'s"
             l = re.sub(r'(\se\s|\se$|\se\n)', ' ', l)                   # replaces " e " with " "
             l = re.sub(r'(\sb\s|\sb$|\sb\n)', ' ', l)                   # replaces " b " with " "
+            l = re.sub(r'"', ' ', l)                                    # replaces '"' with " "
             words = l.split()
 
             words = [i for i, j in zip_longest(words, words[1:]) if i != j]
@@ -157,7 +158,7 @@ def generateLyrics(model, rhyme_scheme, topic, max_gen_length=50):
                     not_enough_rhymes = False
                 elif (not not not required_rhyme_counts[i] <= actual_rhyme_counts[i]):
                     break
-        
+            
         add_more_rhymes(model, rhyme_dictionary, topic, 1, max_gen_length)
 
     # map each letter/section of the rhyming scheme to a rhyme in rhyme_dict
