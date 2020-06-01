@@ -18,18 +18,27 @@ def doTheyRhyme(word1, word2):
 
     for v in (ph.get_perfect_rhymes(word1).values()):
         rhyme_list = rhyme_list + v
+        
+    # for v in (ph.get_substitution_rhymes(word1).values()):
+    #     rhyme_list = rhyme_list + v
+        
+    for v in (ph.get_assonance_rhymes(word1).values()):
+        rhyme_list = rhyme_list + v
+        
+    # for v in (ph.get_consonant_rhymes(word1).values()):
+    #     rhyme_list = rhyme_list + v
 
-    for v in (ph.get_family_rhymes(word1).values()):
+    # for v in (ph.get_family_rhymes(word1).values()):
+    #     rhyme_list = rhyme_list + v
+
+    # for v in (ph.get_partner_rhymes(word1).values()):
+    #     rhyme_list = rhyme_list + v
+
+    for v in (ph.get_additive_rhymes(word1).values()):
         rhyme_list = rhyme_list + v
 
-    for v in (ph.get_partner_rhymes(word1).values()):
+    for v in (ph.get_subtractive_rhymes(word1).values()):
         rhyme_list = rhyme_list + v
-
-#     for v in (ph.get_additive_rhymes(word1).values()):
-#         rhyme_list = rhyme_list + v
-
-#     for v in (ph.get_subtractive_rhymes(word1).values()):
-#         rhyme_list = rhyme_list + v
 
     #print(rhyme_list)
 

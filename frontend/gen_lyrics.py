@@ -5,8 +5,6 @@
 
 
 from textgenrnn import textgenrnn
-import pandas
-import numpy as np
 import rhymes as r
 import importlib
 import string
@@ -56,14 +54,14 @@ def models(genre):
 #       rhyme_dict - dictionary to add rhymes to
 #       num_generations - number of generations to make
 #Output: dictionary where the keys are the rhymes and the values are a list of lines that rhyme
-def add_more_rhymes(model, rhyme_dict, topic, num_generations, max_gen_length=50):
+def add_more_rhymes(model, rhyme_dict, topic, num_generations, max_gen_length=50, temperature=1.0):
 
-    lyrics = model.generate(num_generations, temperature=1.1, max_gen_length=max_gen_length, return_as_list=True, prefix=topic)
+    lyrics = model.generate(num_generations, temperature=temperature, max_gen_length=max_gen_length, return_as_list=True, prefix=topic)
     
     lines = []
     for line in lyrics:
         split = line.splitlines()
-        if (random.random() < 0.5):
+        if (random.random() < 0.5 and len(split) > 0):
             split.pop(0)
         for l in split:
             
@@ -116,7 +114,7 @@ def add_more_rhymes(model, rhyme_dict, topic, num_generations, max_gen_length=50
 
 #Input: genre - string describing the users requested genre
 #       rhyme_scheme - string of capital letters detailing the rhyming scheme
-def generateLyrics(model, rhyme_scheme, topic, max_gen_length=50):
+def generateLyrics(model, rhyme_scheme, topic, max_gen_length=50, temperature=1.0):
     # count the required number of lines for each letter/section of the rhyming scheme
     rhyme_counts = dict()
     lyrics_baby = ""
@@ -128,7 +126,7 @@ def generateLyrics(model, rhyme_scheme, topic, max_gen_length=50):
     
     #Start by adding rhymes to our dictionary
     rhyme_dictionary = dict()
-    add_more_rhymes(model, rhyme_dictionary, topic, 1, max_gen_length)
+    add_more_rhymes(model, rhyme_dictionary, topic, 1, max_gen_length, temperature)
     not_enough_rhymes = True
 
     #Keep adding rhymes until we have enough
